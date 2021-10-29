@@ -1,0 +1,259 @@
+/**
+ * /assets/scss/partials/layouts/navigation.scss
+ *
+ * Let's define our navigation styles
+ *
+ * - Primary Navigation
+ * - Mobile Navigation Icon
+ *
+ */
+
+/* ----- Primary Navigation -------------------- */
+.nav-primary {
+
+     @include media( 'menu+' ) {
+          display: block !important;
+     }
+
+     @include media( 'menu' ) {
+          display: none;
+          position: absolute;
+          top: 100%;
+          width: 100vw;
+          margin-left: -$base-margin;
+          margin-right: -$base-margin;
+          background-color: $white;
+          border-bottom: 1px solid $grey-medium;
+          padding-bottom: 30px;
+     }
+
+     @include media( 'mobile' ) {
+          margin-left: -$mobile-margin;
+          margin-right: -$mobile-margin;
+     }
+
+     .wrap {
+          max-width: 100%;
+          margin: 0;
+     }
+
+     ul {
+          display: flex;
+          flex-wrap: wrap;
+
+     	.menu-item {
+     		list-style: none;
+               position: relative;
+
+     		a {
+     			border: none;
+     			color: $base-color;
+     			display: block;
+     			font-size: 16px;
+     			padding: 15px;
+     			position: relative;
+     		}
+
+     		&:hover > a,
+     		&.current-menu-item > a,
+     		&.current-menu-ancestor > a {
+     			color: $primary-color;
+                    text-decoration: none;
+     		}
+
+               &.menu-item-has-children > a {
+                    padding-right: 34px;
+               }
+
+               button {
+                    background: transparent;
+                    border: none;
+                    border-radius: 0;
+                    box-shadow: none;
+                    padding: 0;
+                    outline: none;
+                    cursor: pointer;
+                    position: absolute;
+                    line-height: 0;
+                    top: 17px;
+                    right: 7px;
+
+                    img {
+                         width: 20px;
+                         height: 20px;
+                    }
+
+                    @include media( 'menu' ) {
+                         top: 4px;
+                         width: 48px;
+                         height: 48px;
+                         display: flex;
+                         justify-content: center;
+                         align-items: center;
+                    }
+               }
+
+               &.menu-button {
+
+                    a {
+
+                         span {
+                              background-color: $primary-color;
+                              color: $white;
+                              padding: 10px 20px;
+                              @extend %transition;
+
+                              &:hover,
+                              &:focus {
+                                   background: darken( $primary-color, 10% );
+                                   color: $white;
+                                   text-decoration: none;
+                              }
+                         }
+                    }
+               }
+
+               &.open {
+
+                    > .sub-menu {
+                         display: block;
+                    }
+
+                    > button {
+                         transform: rotate(180deg);
+                    }
+               }
+
+               @include media( 'menu+' ) {
+                    &:hover {
+
+                         & > .sub-menu {
+                              left: auto;
+                              opacity: 1;
+                         }
+                    }
+               }
+
+               @include media( 'menu' ) {
+                    width: 100%;
+
+                    &:not(.menu-button) {
+                         border-top: 1px solid $grey-medium;
+                    }
+
+                    &.menu-button {
+                         margin-top: 30px;
+                    }
+               }
+     	}
+
+          .sub-menu {
+               background: $white;
+               left: -9999px;
+               opacity: 0;
+               border-radius: 5px;
+               box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+               padding: 10px 0;
+               position: absolute;
+               width: auto;
+               min-width: 200px;
+               z-index: 99;
+               @extend %transition;
+
+               @include media( 'menu' ) {
+                    left: auto;
+                    opacity: 1;
+                    position: relative;
+                    width: 100%;
+                    border-radius: 0;
+                    box-shadow: none;
+                    padding: 0;
+                    background-color: rgba(0,0,0,0.05);
+                    border-top: 1px solid $grey-medium;
+                    display: none;
+               }
+
+               .menu-item {
+                    width: 100%;
+                    display: block;
+                    clear: both;
+                    border-top: none !important;
+               }
+
+               a {
+                    width: 100%;
+                    background: transparent;
+                    color: $base-color;
+                    padding: 8px 30px 8px 20px;
+                    position: relative;
+                    white-space: nowrap;
+               }
+
+               .menu-item:hover > a,
+               .current-menu-item > a {
+                    color: $grey-dark;
+               }
+
+               .sub-menu {
+                    margin: -54px 0 0 199px;
+               }
+          }
+     }
+}
+
+/* ----- Mobile Nav Icon -------------------- */
+.mobile-navigation-icon {
+     display: none;
+     position: absolute;
+     top: 30px;
+     right: 30px;
+     width: 32px;
+     height: 24px;
+     cursor: pointer;
+
+     @extend %transition;
+
+     span {
+          width: 32px;
+          height: 3px;
+          background-color: $grey-dark;
+          border-radius: 10px;
+          position: absolute;
+          top: 0;
+
+          @extend %transition;
+
+          &:nth-child(1) {
+
+          }
+          &:nth-child(2) {
+               top: 10px;
+          }
+          &:nth-child(3) {
+               top: 20px;
+          }
+     }
+
+     &.open span {
+
+          &:nth-child(1) {
+               transform: rotate(45deg);
+               top: 10px;
+               width: 33.94px;
+               left: 0;
+          }
+          &:nth-child(2) {
+               opacity: 0;
+          }
+          &:nth-child(3) {
+               transform: rotate(-45deg);
+               top: 10px;
+               width: 33.94px;
+               left: 0;
+          }
+     }
+
+     @include media( 'menu' ) {
+          display: block;
+     }
+}

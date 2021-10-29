@@ -1,0 +1,113 @@
+/**
+ * /assets/scss/partials/forms/forms-gravity.scss
+ *
+ * Let's define base styles for Gravity Forms
+ *
+ * - Core Styles
+ * - Columns
+ *
+ */
+
+/* ----- Form Core Styles -------------------- */
+.gform_wrapper {
+     width: 100%;
+     margin-bottom: $form-spacing;
+
+     fieldset {
+          padding: 0;
+          border: none;
+     }
+
+     .gfield_label {
+          font-weight: 600;
+          margin-bottom: 5px;
+          display: inline-block;
+          font-size: $form-font-size;
+
+          .gfield_required {
+               color: $form-required-color;
+               padding-left: 4px;
+               font-weight: 400;
+               font-style: italic;
+               font-size: calc(#{$form-font-size} - 2px);
+          }
+     }
+
+     .gfield_description {
+          font-size: calc(#{$form-font-size} - 2px);
+          margin-top: 3px;
+     }
+
+     .field_description_above .gfield_description {
+           margin-top: 0;
+           margin-bottom: 3px;
+     }
+
+     .hidden_label .gfield_label,
+     .hidden_sub_label,
+     .screen-reader-text {
+          border: 0;
+          clip: rect(1px,1px,1px,1px);
+          -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+          height: 1px;
+          width: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          word-wrap: normal !important;
+     }
+
+     .gform_body .gfield.gform_hidden {
+          margin: 0;
+     }
+
+     .gfield_visibility_hidden {
+          visibility: hidden;
+          position: absolute;
+          left: -9999px;
+     }
+}
+
+/* ----- Form Columns ------------------- */
+.gform_body {
+
+     .gform_fields {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+
+          .gfield {
+               width: 100%;
+               margin-bottom: $form-spacing;
+
+               @include media( 'mobile+ ') {
+
+                    &--width-half {
+                         width: calc(50% - calc(#{$form-spacing} / 2));
+                    }
+
+                    &--width-third {
+                         width: calc(calc(100% / 3) - calc(calc(#{$form-spacing} * 2) / 3));
+                    }
+
+                    &--width-quarter {
+                         width: calc(25% - calc(calc(#{$form-spacing} * 3) / 4));
+
+                         @media(max-width:1000px) {
+                              width: calc(50% - calc(#{$form-spacing} / 2));
+                         }
+                    }
+               }
+          }
+     }
+}
+
+@import 'forms-gravity-address';
+@import 'forms-gravity-checkboxradio';
+@import 'forms-gravity-datepicker';
+@import 'forms-gravity-names';
+@import 'forms-gravity-select';
+// @import 'forms-gravity-styled-labels';
+@import 'forms-gravity-validation';

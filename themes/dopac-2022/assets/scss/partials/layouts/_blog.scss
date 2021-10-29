@@ -1,0 +1,32 @@
+/**
+ * /assets/scss/partials/layouts/blog.scss
+ *
+ * Let's define our blog styles
+ *
+ * - Archive
+ * - Loop Item
+ * - Single
+ *
+ */
+
+/* ----- Archive -------------------- */
+
+/* ----- Loop Item -------------------- */
+.loop-wrapper {
+     display: grid;
+     flex-wrap: wrap;
+     column-gap: $base-margin;
+     row-gap: $base-margin;
+     grid-template-columns: repeat( 3, 1fr );
+     width: 100%;
+
+     @include media( 'tablet' ) {
+          grid-template-columns: repeat( 2, 1fr );
+     }
+
+     @include media( 'mobile' ) {
+          grid-template-columns: 1fr;
+     }
+}
+
+/* ----- Single -------------------- */

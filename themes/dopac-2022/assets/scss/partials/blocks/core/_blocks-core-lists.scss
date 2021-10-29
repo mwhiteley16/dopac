@@ -1,0 +1,111 @@
+/**
+ * /assets/scss/partials/blocks/core/blocks-core-list.scss
+ *
+ * Let's define our core list styles
+ *
+ *
+ */
+
+/* ----- Core List Styles -------------------- */
+ul,ol {
+
+     &.is-style-two-column-list {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+
+          li {
+               width: 50%;
+               padding-right: 60px;
+
+               @media(max-width:499px) {
+                    width: 100%;
+                    padding-right: 0;
+               }
+
+               @media(min-width:500px) {
+                    &:nth-child(even) {
+                         padding-right: 0;
+                    }
+               }
+          }
+     }
+
+     &.is-style-three-column-list {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+
+          li {
+               width: 33.33%;
+               padding-right: 60px;
+
+               @media(max-width:649px) {
+                    width: 50%;
+               }
+
+               @media(max-width:499px) {
+                    width: 100%;
+                    padding-right: 0;
+               }
+
+               @media(min-width:650px) and (max-width:500px) {
+                    &:nth-child(3n) {
+                         padding-right: 0;
+                    }
+               }
+
+               @media(min-width:500px) and (max-width:649px) {
+                    &:nth-child(even) {
+                         padding-right: 0;
+                    }
+               }
+          }
+     }
+
+     &.is-style-styled-list {
+          list-style-type: none;
+          padding: 0 !important;
+
+          li {
+               margin: 0 0 2px;
+               position: relative;
+               padding: 0 0 0 17px !important;
+
+               &::before {
+                    content: "";
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 7px;
+                    background-color: $primary-color;
+                    position: absolute;
+                    top: 9px;
+                    left: 0;
+               }
+
+               &:last-child {
+                    margin-bottom: 30px;
+               }
+          }
+     }
+}
+
+ol.is-style-styled-list {
+     counter-reset: wd-counter;
+
+     li {
+          counter-increment: wd-counter;
+          padding: 0 0 0 26px !important;
+
+          &::before {
+               content: counter(wd-counter)".";
+               color: $primary-color;
+               font-weight: 600;
+               width: auto;
+               height: auto;
+               background-color: transparent;
+               top: 0;
+               font-family: $font-stack-secondary;
+          }
+     }
+}

@@ -1,0 +1,25 @@
+/**
+ * /assets/scss/partials/blocks/core/blocks-core-paragraphs.scss
+ *
+ * Let's define our core paragraph text styles
+ *
+ *
+ */
+
+/* ----- Core Block Paragraphs -------------------- */
+p {
+	margin: 0 0 $base-margin;
+	padding: 0;
+
+     &.has-background {
+          padding: 15px;
+     }
+
+     &.is-style-no-bottom-margin {
+          margin-bottom: 0;
+     }
+
+     &.is-style-half-bottom-margin {
+          margin-bottom: $base-margin-half;
+     }
+}

@@ -1,0 +1,30 @@
+/* Author Dependencies */
+@import 'partials/base/variables'; // must be first
+@import 'partials/base/mixins'; // must be second
+@import 'partials/base/buttons';
+@import 'partials/base/headings';
+@import 'partials/base/reset';
+@import 'partials/base/tables';
+@import 'partials/base/typography';
+@import 'partials/base/universal';
+
+
+/* Layouts */
+@import 'partials/layouts/blog';
+@import 'partials/layouts/flickity';
+@import 'partials/layouts/footer';
+@import 'partials/layouts/header';
+@import 'partials/layouts/interiors';
+@import 'partials/layouts/navigation';
+@import 'partials/layouts/pagination';
+@import 'partials/layouts/search';
+@import 'partials/layouts/widgets';
+
+
+/* Forms */
+@import 'partials/forms/forms-base';
+@import 'partials/forms/forms-gravity';
+
+
+/* Blocks */
+@import 'partials/blocks/blocks-base';
