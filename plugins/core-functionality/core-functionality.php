@@ -23,10 +23,10 @@ define( 'WD_PLUGIN_THEME_SLUG', 'base-child-theme' );
 * custom post types
 */
 require_once WD_PLUGIN_PATH.'/lib/post-types/post-type-block-areas.php';
-// require_once WD_PLUGIN_PATH.'/lib/post-types/post-type-news.php';
 
 
 /**
-* custom taxonomies
+* functionality
 */
-//require_once WD_PLUGIN_PATH.'/lib/taxonomies/taxonomy-news.php';
+require_once WD_PLUGIN_PATH.'/lib/functionality/disable-blog.php';
+require_once WD_PLUGIN_PATH.'/lib/functionality/pets.php';

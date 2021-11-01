@@ -10,7 +10,7 @@ https://github.com/mwhiteley16/Whiteley-Designs-Blueprint/wiki/Core-Functionalit
 
 
 ## Changelog
-Version 1.0 -
+Version 1.0 - 11/1/2021
  - Initial Commit
 
  Repository refactored on 4/29/2021. View previous commits at old plugin repository located at https://github.com/mwhiteley16/core-functionality
