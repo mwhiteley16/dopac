@@ -17,6 +17,17 @@
 	@extend %button-styles;
      text-decoration: none;
 
+     .has-large-font-size & {
+          min-width: 175px;
+          font-size: 14px !important;
+     }
+
+     .has-small-font-size & {
+          font-size: 14px !important;
+          padding-top: 8px;
+          padding-bottom: 8px;
+     }
+
 	&:not(.has-text-color) {
 		color: white;
 

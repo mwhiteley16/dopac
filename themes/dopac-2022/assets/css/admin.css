@@ -50,11 +50,11 @@ body .editor-styles-wrapper {
       padding-left: 20px;
       padding-left: 20px; } }
   body .editor-styles-wrapper a {
-    color: #007991; }
+    color: #002868; }
     body .editor-styles-wrapper a:hover {
-      color: #004e5e; }
+      color: #001435; }
     body .editor-styles-wrapper a[href^="tel"], body .editor-styles-wrapper a[href^="tel"]:hover {
-      color: #373737; }
+      color: #4a4a4a; }
   body .editor-styles-wrapper .editor-post-title .editor-post-title__input {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     font-weight: 700;
@@ -78,7 +78,7 @@ body:not(.is-fullscreen-mode) .is-sidebar-opened .editor-styles-wrapper .alignfu
 .post-type-post .editor-styles-wrapper .wp-block,
 .thin-layout .editor-styles-wrapper .editor-post-title__block.wp-block,
 .thin-layout .editor-styles-wrapper .wp-block {
-  max-width: 768px;
+  max-width: 825px;
   margin-left: auto !important;
   margin-right: auto !important; }
 
@@ -92,7 +92,7 @@ body:not(.is-fullscreen-mode) .is-sidebar-opened .editor-styles-wrapper .alignfu
 .sidebar-content .editor-styles-wrapper .wp-block[data-align="full"],
 .sidebar-content .editor-styles-wrapper .wp-block[data-align="wide"],
 .sidebar-content .editor-styles-wrapper .alignfull {
-  max-width: 768px;
+  max-width: 825px;
   margin-left: auto !important;
   margin-right: auto !important; }
 
@@ -129,18 +129,26 @@ body:not(.is-fullscreen-mode) .is-sidebar-opened .editor-styles-wrapper .alignfu
           color: #fff; }
         .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="white"]:checked::before, .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="grey-light"]:checked::before, .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="grey-medium"]:checked::before {
           color: #000; }
-        .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="primary-color"] {
-          background-color: #007991; }
-        .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="secondary-color"] {
-          background-color: #439a86; }
+        .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="blue"] {
+          background-color: #002868; }
+        .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="blue-light"] {
+          background-color: #f2f5f7; }
+        .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="red"] {
+          background-color: #8c1a11; }
+        .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="red-light"] {
+          background-color: #d41d2f; }
+        .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="gold"] {
+          background-color: #bc9774; }
+        .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="gold-light"] {
+          background-color: #f1e9e1; }
         .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="base-color"] {
-          background-color: #373737; }
+          background-color: #4a4a4a; }
         .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="grey-light"] {
-          background-color: #fafafa; }
+          background-color: #c4c4c4; }
         .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="grey-medium"] {
-          background-color: #e0e0e0; }
+          background-color: #b3b3b0; }
         .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="grey-dark"] {
-          background-color: #424242; }
+          background-color: #4a4a4a; }
         .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="white"] {
           background-color: #fff; }
         .wp-admin .acf-block-component ul.acf-radio-list li label input[type="radio"][value="black"] {

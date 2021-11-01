@@ -50,29 +50,49 @@ add_theme_support( 'responsive-embeds' );
 add_theme_support( 'editor-color-palette',
      [
      	[
-     		'name'  => __( 'Primary Color', WD_CHILD_THEME_SLUG ),
-     		'slug'  => 'primary-color',
-     		'color' => '#007991',
+     		'name'  => __( 'Blue', WD_CHILD_THEME_SLUG ),
+     		'slug'  => 'blue',
+     		'color' => '#002868',
      	],
      	[
-     		'name'  => __( 'Secondary Color', WD_CHILD_THEME_SLUG ),
-     		'slug'  => 'secondary-color',
-     		'color' => '#439a86',
+     		'name'  => __( 'Blue Light', WD_CHILD_THEME_SLUG ),
+     		'slug'  => 'blue-light',
+     		'color' => '#f2f5f7',
+     	],
+     	[
+     		'name'  => __( 'Red', WD_CHILD_THEME_SLUG ),
+     		'slug'  => 'red',
+     		'color' => '#8c1a11',
+     	],
+     	[
+     		'name'  => __( 'Red Light', WD_CHILD_THEME_SLUG ),
+     		'slug'  => 'red-light',
+     		'color' => '#d41d2f',
+     	],
+     	[
+     		'name'  => __( 'Gold', WD_CHILD_THEME_SLUG ),
+     		'slug'  => 'gold',
+     		'color' => '#bc9774',
+     	],
+     	[
+     		'name'  => __( 'Gold Light', WD_CHILD_THEME_SLUG ),
+     		'slug'  => 'gold-light',
+     		'color' => '#f1e9e1',
      	],
      	[
      		'name'  => __( 'Grey Light', WD_CHILD_THEME_SLUG ),
      		'slug'  => 'grey-light',
-     		'color' => '#fafafa',
+     		'color' => '#c4c4c4',
      	],
      	[
      		'name'  => __( 'Grey Medium', WD_CHILD_THEME_SLUG ),
      		'slug'  => 'grey-medium',
-     		'color' => '#e0e0e0',
+     		'color' => '#b3b3b0',
      	],
      	[
      		'name'  => __( 'Grey Dark', WD_CHILD_THEME_SLUG ),
      		'slug'  => 'grey-dark',
-     		'color' => '#424242',
+     		'color' => '#4a4a4a',
      	],
           [
      		'name'  => __( 'White', WD_CHILD_THEME_SLUG ),
@@ -99,13 +119,13 @@ add_theme_support( 'editor-font-sizes',
      	[
      		'name'      => __( 'Small', WD_CHILD_THEME_SLUG ),
      		'shortName' => __( 'S', WD_CHILD_THEME_SLUG ),
-     		'size'      => 12,
+     		'size'      => 16,
      		'slug'      => 'small'
      	],
      	[
      		'name'      => __( 'Regular', WD_CHILD_THEME_SLUG ),
      		'shortName' => __( 'M', WD_CHILD_THEME_SLUG ),
-     		'size'      => 16,
+     		'size'      => 18,
      		'slug'      => 'regular'
      	],
      	[
@@ -113,12 +133,6 @@ add_theme_support( 'editor-font-sizes',
      		'shortName' => __( 'L', WD_CHILD_THEME_SLUG ),
      		'size'      => 20,
      		'slug'      => 'large'
-     	],
-     	[
-     		'name'      => __( 'Larger', WD_CHILD_THEME_SLUG ),
-     		'shortName' => __( 'XL', WD_CHILD_THEME_SLUG ),
-     		'size'      => 24,
-     		'slug'      => 'larger'
      	]
      ]
 );

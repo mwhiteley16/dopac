@@ -61,6 +61,10 @@ wp.domReady( () => {
                {
                     name: 'half-bottom-margin',
                     label: 'Half Bottom Margin',
+               },
+               {
+                    name: 'large-header',
+                    label: 'Large Header',
                }
           ]
      );

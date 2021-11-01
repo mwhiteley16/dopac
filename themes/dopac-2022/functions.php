@@ -28,8 +28,7 @@ function wd_theme_fonts() {
 
      // array of Google Fonts
      $font_families_array = [
-          'Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900',
-          'Open+Sans:ital,wght@0,300;0,400;1,300'
+          'Open+Sans:ital,wght@0,400;0,600;1,400;1,600'
      ];
 
      // create URL string from array of font families
