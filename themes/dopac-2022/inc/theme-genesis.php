@@ -193,3 +193,22 @@ function wd_custom_loop() {
 * Enable the block-based widget editor
 */
 add_filter( 'use_widgets_block_editor', '__return_true' );
+
+
+/**
+* Add search toggle under header
+*/
+add_action( 'genesis_after_header', 'wd_search_toggle', 14 );
+function wd_search_toggle() { ?>
+
+     <div class="search-dropdown">
+
+          <button class="close-search-toggle" aria-label="Close Search">
+               <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/utility/close.svg" alt="Close Icon" aria-hidden="true" role="img" focusable="false">
+          </button>
+
+          <?php echo get_search_form(); ?>
+
+     </div>
+
+<?php }

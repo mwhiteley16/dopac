@@ -13,6 +13,15 @@
                $(this).parent('.menu-item').toggleClass('open');
           })
 
+          // Header search toggle
+          $('button.menu-search').click(function() {
+               $('.search-dropdown').slideToggle();
+               $('.search-dropdown input.search-field').focus();
+          });
+          $('.close-search-toggle').click(function() {
+               $('.search-dropdown').slideUp();
+          });
+
           // custom gravityforms labels (use div with .gfield to avoid complex fieldsets)
           // $( '.styled-labels div.gfield input, .styled-labels div.gfield textarea' ).on( "change keyup keydown" , function(e) {
           //      var elem = $(this);

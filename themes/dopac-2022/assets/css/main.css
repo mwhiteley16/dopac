@@ -24,7 +24,7 @@ input {
 /**
 * Base button styles
 */
-.wp-block-button__link, .archive-pager .facetwp-facet button, a.wd-button,
+.wp-block-button__link, .archive-pager .facetwp-facet button, .search-dropdown .search-form button.search-submit, a.wd-button,
 input[type="button"],
 input[type="button"][disabled]:hover,
 input[type="button"][disabled]:focus,
@@ -46,7 +46,7 @@ button.gform_button {
   display: inline-block;
   height: auto;
   border-radius: 5px; }
-  .wp-block-button__link:hover, .archive-pager .facetwp-facet button:hover, a.wd-button:hover,
+  .wp-block-button__link:hover, .archive-pager .facetwp-facet button:hover, .search-dropdown .search-form button.search-submit:hover, a.wd-button:hover,
   input[type="button"]:hover,
   input[type="button"][disabled]:hover,
   input[type="reset"]:hover,
@@ -54,7 +54,7 @@ button.gform_button {
   input[type="submit"]:hover,
   input[type="submit"][disabled]:hover,
   .claim-search button:hover,
-  button.gform_button:hover, .wp-block-button__link:focus, .archive-pager .facetwp-facet button:focus, a.wd-button:focus,
+  button.gform_button:hover, .wp-block-button__link:focus, .archive-pager .facetwp-facet button:focus, .search-dropdown .search-form button.search-submit:focus, a.wd-button:focus,
   input[type="button"]:focus,
   input[type="button"][disabled]:focus,
   input[type="reset"]:focus,
@@ -67,7 +67,7 @@ button.gform_button {
     background: #001435;
     color: #fff;
     text-decoration: none; }
-  .button--inverse.wp-block-button__link, .archive-pager .facetwp-facet button.button--inverse, a.button--inverse.wd-button,
+  .button--inverse.wp-block-button__link, .archive-pager .facetwp-facet button.button--inverse, .search-dropdown .search-form button.button--inverse.search-submit, a.button--inverse.wd-button,
   input.button--inverse[type="button"],
   input.button--inverse[type="button"][disabled]:hover,
   input.button--inverse[type="button"][disabled]:focus,
@@ -81,12 +81,12 @@ button.gform_button {
   button.button--inverse.gform_button {
     background-color: transparent;
     color: #002868; }
-    .button--inverse.wp-block-button__link:hover, .archive-pager .facetwp-facet button.button--inverse:hover, a.button--inverse.wd-button:hover,
+    .button--inverse.wp-block-button__link:hover, .archive-pager .facetwp-facet button.button--inverse:hover, .search-dropdown .search-form button.button--inverse.search-submit:hover, a.button--inverse.wd-button:hover,
     input.button--inverse[type="button"]:hover,
     input.button--inverse[type="reset"]:hover,
     input.button--inverse[type="submit"]:hover,
     .claim-search button.button--inverse:hover,
-    button.button--inverse.gform_button:hover, .button--inverse.wp-block-button__link:focus, .archive-pager .facetwp-facet button.button--inverse:focus, a.button--inverse.wd-button:focus,
+    button.button--inverse.gform_button:hover, .button--inverse.wp-block-button__link:focus, .archive-pager .facetwp-facet button.button--inverse:focus, .search-dropdown .search-form button.button--inverse.search-submit:focus, a.button--inverse.wd-button:focus,
     input.button--inverse[type="button"]:focus,
     input.button--inverse[type="reset"]:focus,
     input.button--inverse[type="submit"]:focus,
@@ -958,6 +958,68 @@ ol.flickity-page-dots {
         padding: 20px; }
       .site-header > .wrap {
         flex-wrap: wrap; } }
+/* ----- Search Dropdown -------------------- */
+.search-dropdown {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #b3b3b0;
+  border-bottom: 1px solid #b3b3b0;
+  position: relative;
+  display: none; }
+  @media (max-width: 768px) {
+    .search-dropdown {
+      display: none !important; } }
+  .search-dropdown .search-form {
+    width: 660px;
+    max-width: calc(100% - 124px);
+    display: flex;
+    align-items: center;
+    margin: 0 auto; }
+    .search-dropdown .search-form label {
+      flex: 1;
+      position: relative; }
+      .search-dropdown .search-form label i.fa-search {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        opacity: 0.3; }
+    .search-dropdown .search-form input[type="search"] {
+      border-width: 1px;
+      padding: 10px;
+      height: 40px; }
+      .search-dropdown .search-form input[type="search"]:focus {
+        border-color: #b3b3b0; }
+    .search-dropdown .search-form button.search-submit {
+      position: relative;
+      top: auto;
+      left: auto;
+      background-color: #002868;
+      border-color: #002868;
+      color: #fff;
+      font-size: 14px;
+      width: 82px;
+      height: 40px;
+      margin-left: 8px;
+      padding: 0;
+      font-weight: 600;
+      cursor: pointer; }
+      .search-dropdown .search-form button.search-submit:hover {
+        background-color: #001435; }
+
+.close-search-toggle {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 /**
  * /assets/scss/partials/layouts/interiors.scss
  *
