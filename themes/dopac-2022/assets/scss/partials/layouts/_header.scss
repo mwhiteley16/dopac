@@ -7,9 +7,10 @@
  */
 
 .site-header {
-     @include spacing( 'both', null );
+     padding: 20px;
      width: 100%;
      position: relative;
+     background-color: $blue-light;
 
      > .wrap {
           display: flex;
@@ -21,8 +22,21 @@
      &__logo {
 
           img {
-               width: auto;
-               height: 125px;
+               width: 245px;
+               height: auto;
+               display: block;
+          }
+     }
+
+     @include media( 'menu' ) {
+          padding: 0;
+
+          &__logo {
+               padding: 20px;
+          }
+
+          > .wrap {
+               flex-wrap: wrap;
           }
      }
 }

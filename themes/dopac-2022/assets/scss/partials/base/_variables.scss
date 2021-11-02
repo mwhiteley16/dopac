@@ -90,8 +90,8 @@ $breakpoints: (
      'medium+' : ( min-width: 901px ),
      'mobile'  : ( max-width: 600px ),
      'mobile+' : ( min-width: 601px ),
-     'menu'    : ( max-width: 1000px ),
-     'menu+'   : ( min-width: 1001px )
+     'menu'    : ( max-width: 768px ),
+     'menu+'   : ( min-width: 769px )
 );
 
 

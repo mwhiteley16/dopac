@@ -37,9 +37,9 @@ add_action( 'login_head', 'wd_login_logo' );
 function wd_login_logo() {
 
      // logo variables
-	$logo_path   = '';
-	$logo_width  = 367;
-	$logo_height = 194;
+	$logo_path   = '/assets/images/logo/docpac-logo.svg';
+	$logo_width  = 246;
+	$logo_height = 52;
 
      // if custom logo isn't set, return
 	if ( ! file_exists( get_stylesheet_directory() . $logo_path ) ) {
@@ -288,3 +288,20 @@ function wd_admin_menu_cleanup() {
 * Add custom image sizes
 */
 // add_image_size( 'size-name', 000, 000, true );
+
+/**
+* Add search to primary nav menu
+*/
+add_filter( 'wp_nav_menu_items', 'wd_main_nav_search', 10, 2 );
+function wd_main_nav_search( $items, $args ) {
+     if( 'primary' === $args->theme_location ) {
+          $items .= '<li class="menu-item menu-item--search">';
+               $items .= '<button class="menu-search" aria-label="Search">';
+                    // search icon found in /assets/image/form-icons/search-regular.svg
+                    $items .= '<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z"></path></svg>';
+               $items .= '</button>';
+          $items .= '</li>';
+     }
+
+     return $items;
+}

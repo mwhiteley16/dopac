@@ -63,7 +63,9 @@ add_theme_support( 'custom-logo',
 */
 add_theme_support( 'genesis-menus',
      [
-          'primary' => __( 'Primary Navigation Menu', WD_CHILD_THEME_SLUG ),
+          'primary' => __( 'Primary Menu', WD_CHILD_THEME_SLUG ),
+          'top'     => __( 'Top Menu', WD_CHILD_THEME_SLUG ),
+          'footer'  => __( 'Footer Menu', WD_CHILD_THEME_SLUG )
      ]
 );
 
@@ -98,13 +100,6 @@ genesis_register_layout(
 */
 unregister_sidebar( 'header-right' );
 unregister_sidebar( 'sidebar-alt' );
-
-
-/**
-* Reposition navigation within header
-*/
-remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_header', 'genesis_do_nav', 12 );
 
 
 /**
@@ -147,19 +142,9 @@ function wd_footer() {
 
 
 /**
-* Modify superfish scripts
-* Do not deregister and re-register script or load order will cause console errors
-*/
-// add_filter( 'genesis_superfish_args_url', 'wd_superfish_args_url' );
-
-function wd_superfish_args_url( $url ) {
-	return get_stylesheet_directory_uri() . '/assets/js/superfish-args-min.js';
-}
-
-/**
 * Remove superfish scripts
 */
-// add_action( 'wp_enqueue_scripts', 'wd_disable_superfish' );
+add_action( 'wp_enqueue_scripts', 'wd_disable_superfish' );
 function wd_disable_superfish() {
 
 	wp_deregister_script( 'superfish' );
