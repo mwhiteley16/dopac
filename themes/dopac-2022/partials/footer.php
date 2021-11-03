@@ -8,13 +8,22 @@
 **/
 ?>
 
-<?php
-$wd_options_copyright_text = get_field( 'wd_options_copyright_text', 'option' );
+<?php // footer menu
+if( has_nav_menu( 'footer' ) ) {
+     wp_nav_menu( [
+          'theme_location'    => "footer",
+          'menu_class'        => "footer-menu__menu",
+          'container'         => "div",
+          'container_class'   => "footer-menu"
+     ] );
+}
 ?>
 
-<?php if ( ! empty( $wd_options_copyright_text ) ) : ?>
-     <div class="site-footer__copyright">
-          <p>&copy; <?php echo date('Y'); ?> <?php echo $wd_options_copyright_text; ?></p>
+<?php
+$wd_options_footer_email_signup_form = get_field( 'wd_options_footer_email_signup_form', 'option' );
+if ( function_exists( 'gravity_form' ) && ! empty( $wd_options_footer_email_signup_form ) ) : ?>
+     <div class="footer-email-subscribe">
+          <?php gravity_form( $wd_options_footer_email_signup_form, false, false, false, '', true ); ?>
      </div>
 <?php endif; ?>
 

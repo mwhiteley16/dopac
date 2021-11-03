@@ -35,23 +35,42 @@
             "endpoint": 0
         },
         {
-            "key": "field_609e9617b8108",
-            "label": "Copyright Text",
-            "name": "wd_options_copyright_text",
-            "type": "textarea",
-            "instructions": "Add copyright text. Exclude copyright year as that will be automatically generated and changed each year.",
-            "required": 0,
+            "key": "field_618287e07f6ce",
+            "label": "Footer E-Subscribe Form",
+            "name": "wd_options_footer_email_signup_form",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "All rights reserved.",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 2,
-            "new_lines": "br"
+            "choices": {
+                "1": "Contact",
+                "12": "Cookbook Purchase",
+                "14": "DOCPAC T-Shirt",
+                "10": "Donation - Honorary Gift",
+                "6": "Donation - Kennel Sponsorship ",
+                "9": "Donation - Memorial Gift",
+                "11": "Donation - Monthly Gift",
+                "8": "Donation - One Time Gift",
+                "13": "Donation - Rock & Rescue 2015",
+                "7": "Donation - Special Needs",
+                "15": "Footer Newsletter Sign-Up",
+                "5": "New Volunteer",
+                "3": "Special Request",
+                "2": "Success Story",
+                "4": "Volunteer Sign Up"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_609e957264fea",
@@ -162,5 +181,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1621006240
+    "modified": 1635944530
 }

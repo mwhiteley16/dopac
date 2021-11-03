@@ -21,7 +21,7 @@ $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
      </div>
 <?php endif; ?>
 
-<?php // left menu
+<?php // top menu
 if( has_nav_menu( 'top' ) ) {
      wp_nav_menu( [
           'theme_location'    => "top",

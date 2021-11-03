@@ -70,12 +70,12 @@ function wd_global_enqueues() {
      );
 
      // font awesome
-     // wp_enqueue_script(
-     //      'wd-fontawesome',
-     //      'https://kit.fontawesome.com/7bb1dd36e7.js',
-     //      [],
-     //      null
-     // );
+     wp_enqueue_script(
+          'wd-fontawesome',
+          'https://kit.fontawesome.com/7bb1dd36e7.js',
+          [],
+          null
+     );
 
 }
 add_action( 'wp_enqueue_scripts', 'wd_global_enqueues' );
@@ -112,12 +112,12 @@ function wd_admin_enqueues() {
      // );
 
      // font awesome
-     // wp_enqueue_script(
-     //      'wd-fontawesome',
-     //      'https://kit.fontawesome.com/7bb1dd36e7.js',
-     //      [],
-     //      null
-     // );
+     wp_enqueue_script(
+          'wd-fontawesome',
+          'https://kit.fontawesome.com/7bb1dd36e7.js',
+          [],
+          null
+     );
 }
 add_action( 'enqueue_block_editor_assets', 'wd_admin_enqueues' );
 
@@ -147,7 +147,7 @@ function wd_script_attributes( $tag, $handle ) {
 
      return $tag;
 }
-// add_filter( 'script_loader_tag', 'wd_script_attributes', 10, 2 );
+add_filter( 'script_loader_tag', 'wd_script_attributes', 10, 2 );
 
 
 /**

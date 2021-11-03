@@ -59,7 +59,6 @@ function wd_gf_update_submit_button( $button_input, $form ) {
 
      //remove value attribute (since we aren't using an input)
      $button_atts = str_replace( "value='" . $form['button']['text'] . "' ", "", $button_match[1] );
-
      // create the button element with the button text inside the button element instead of set as the value
      return '<button ' . $button_atts . '><span>' . $form['button']['text'] . '</span></button>';
 

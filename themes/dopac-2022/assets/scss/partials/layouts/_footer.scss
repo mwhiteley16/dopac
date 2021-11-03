@@ -4,30 +4,181 @@
  * Let's define our footer styles
  *
  * - Main Footer Area
- * - Footer Widgets
+ * - Footer Menu
+ * - Footer Email Subscribe
+ * - Footer Social Media
  *
  */
 
 /* ----- Main Footer -------------------- */
 .site-footer {
-     @include spacing( 'both', 'large' );
+     @include spacing( 'horizontal', null );
      width: 100%;
      text-align: center;
+     background-color: $grey-dark;
+     color: $white;
+
+     > .wrap {
+          max-width: none;
+     }
 }
 
-/* ----- Footer Widgets -------------------- */
-.footer-widgets {
+/* ----- Footer Menu -------------------- */
+.footer-menu {
+     width: calc(100% + calc(#{$h-spacing} * 2));
+     margin-left: -$h-spacing;
+     margin-right: -$h-spacing;
+     border-top: 1px solid $blue-light;
+     border-bottom: 1px solid $blue-light;
+     padding: 25px $base-margin;
 
-     width: 100%;
-     padding: 75px 0;
-
-     .wrap {
-          display: flex;
-
-          .widget-area {
-               width: 33.33%;
-          }
-
+     @include media( 'tablet' ) {
+          width: calc(100% + calc(#{$h-spacing-tablet} * 2));
+          margin-left: -$h-spacing-tablet;
+          margin-right: -$h-spacing-tablet;
      }
 
+     @include media( 'mobile' ) {
+          width: calc(100% + calc(#{$h-spacing-mobile} * 2));
+          margin-left: -$h-spacing-mobile;
+          margin-right: -$h-spacing-mobile;
+          padding: 50px $mobile-margin;
+     }
+
+     ul.footer-menu__menu {
+          list-style-type: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+
+          li {
+               margin: 15px 35px;
+
+               a {
+                    font-weight: 600;
+                    color: $blue-light;
+               }
+
+               @include media( 'tablet' ) {
+                    margin: 15px;
+               }
+
+               @include media( 'mobile' ) {
+                    width: 100%;
+                    margin: 15px 0;
+               }
+          }
+     }
+}
+
+/* ----- Footer Email Subscribe -------------------- */
+.footer-email-subscribe {
+     max-width: 500px;
+     margin: 40px auto;
+
+     .gform_wrapper form {
+          display: flex;
+          flex-wrap: wrap;
+
+          .gform_body {
+               flex: 1;
+
+               .gform_fields {
+
+                    .gfield {
+                         margin: 0;
+
+                         input {
+                              height: 50px;
+                              border: none;
+                              border-radius: 0;
+                              padding: 8px 20px;
+                         }
+                    }
+               }
+
+               @include media( 'mobile' ) {
+                    flex: none;
+                    width: 100%;
+               }
+          }
+
+          .gform_footer {
+               width: 110px;
+               margin: 0;
+               padding: 0;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               position: relative;
+
+               button {
+                    background-color: transparent;
+                    border: none;
+                    margin-bottom: 0;
+                    width: 100%;
+                    background-color: $red;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    font-size: 14px;
+                    font-weight: 600;
+                    padding: 0;
+                    border-radius: 0;
+               }
+
+               @include media( 'mobile' ) {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 10px;
+
+                    button {
+                         position: relative;
+                         top: auto;
+                         left: auto;
+                         height: auto;
+                         font-size: 16px;
+                         padding: 12px;
+                    }
+               }
+          }
+     }
+}
+
+/* ----- Footer Social Media -------------------- */
+.site-footer .social-media {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     padding-bottom: 40px;
+
+     &__link {
+          width: 50px;
+          height: 50px;
+          border: 2px solid $blue-light;
+          border-radius: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 12px;
+
+          i {
+               color: $blue-light;
+               @extend %transition;
+               font-size: 20px;
+          }
+
+          &:hover {
+               color: $white;
+               text-decoration: none;
+
+               i {
+                    color: $white;
+               }
+          }
+     }
 }

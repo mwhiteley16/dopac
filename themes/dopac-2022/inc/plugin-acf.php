@@ -66,3 +66,28 @@ function wd_acf_dynamic_colors_load( $field ) {
      return $field;
 
 }
+
+
+/**
+ * Dynamically popuplate ACF dropdown with Gravity Forms
+ * @link https://www.advancedcustomfields.com/resources/acf-load_field/
+ * @link https://www.advancedcustomfields.com/resources/dynamically-populate-a-select-fields-choices/
+ * @link https://whiteleydesigns.com/code/dynamically-popuplate-acf-dropdown-with-gravity-forms/
+ *
+ * Dynamically populates any ACF field with wd_gravity_form_choices Field Name with custom color palette
+ *
+*/
+function wd_gravity_forms_dropdown( $field ) {
+	if ( class_exists( 'GFFormsModel' ) ) {
+		$choices = [];
+
+		foreach ( \GFFormsModel::get_forms() as $form ) {
+			$choices[ $form->id ] = $form->title;
+		}
+
+		$field['choices'] = $choices;
+	}
+
+	return $field;
+}
+add_filter( 'acf/load_field/name=wd_options_footer_email_signup_form', 'wd_gravity_forms_dropdown' );
