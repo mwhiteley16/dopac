@@ -212,3 +212,69 @@ function wd_search_toggle() { ?>
      </div>
 
 <?php }
+
+
+/**
+* Pre-footer CTA area
+*/
+add_action( 'genesis_before_footer', 'wd_pre_footer_cta' );
+function wd_pre_footer_cta() {
+
+     $wd_options_pre_footer_image = get_field( 'wd_options_pre_footer_image', 'option' );
+     $wd_options_pre_footer_cta_text = get_field( 'wd_options_pre_footer_cta_text', 'option' );
+
+     // get button variables and add proper rel tags based on target setting
+     $wd_options_pre_footer_button_1 = get_field( 'wd_options_pre_footer_button_1', 'option' );
+     $button_1_target = ! empty( $wd_options_pre_footer_button_1['target'] ) ? ' target="' . $wd_options_pre_footer_button_1['target'] . '"' : '';
+     if ( $wd_options_pre_footer_button_1['target'] == '_blank' ) { $button_1_target .= ' rel="noopener noreferrer"'; }
+
+     $wd_options_pre_footer_button_2 = get_field( 'wd_options_pre_footer_button_2', 'option' );
+     $button_2_target = ! empty( $wd_options_pre_footer_button_2['target'] ) ? ' target="' . $wd_options_pre_footer_button_2['target'] . '"' : '';
+     if ( $wd_options_pre_footer_button_2['target'] == '_blank' ) { $button_2_target .= ' rel="noopener noreferrer"'; }
+
+     $wd_options_pre_footer_button_3 = get_field( 'wd_options_pre_footer_button_3', 'option' );
+     $button_3_target = ! empty( $wd_options_pre_footer_button_3['target'] ) ? ' target="' . $wd_options_pre_footer_button_3['target'] . '"' : '';
+     if ( $wd_options_pre_footer_button_3['target'] == '_blank' ) { $button_3_target .= ' rel="noopener noreferrer"'; }
+     ?>
+
+     <div class="pre-footer-cta">
+
+          <?php if ( $wd_options_pre_footer_image ) : ?>
+               <div class="pre-footer-cta__image">
+                    <img src="<?php echo esc_url( $wd_options_pre_footer_image['url'] ); ?>" alt="<?php echo esc_attr( $wd_options_pre_footer_image['alt'] ); ?>" />
+               </div>
+          <?php endif; ?>
+
+          <div class="pre-footer-cta__blue">
+
+               <span class="pre-footer-cta__header">
+                    <?php echo $wd_options_pre_footer_cta_text; ?>
+               </span>
+
+               <div class="pre-footer-cta__buttons wp-block-buttons">
+
+                    <div class="wp-block-button pre-footer-cta__button pre-footer-cta__button--1">
+                         <a class="wp-block-button__link has-base-color-color has-white-background-color has-text-color has-background" href="<?php echo esc_url( $wd_options_pre_footer_button_1['url'] ); ?>" <?php echo $button_1_target; ?>>
+                              <?php echo esc_html( $wd_options_pre_footer_button_1['title'] ); ?>
+                         </a>
+                    </div>
+
+                    <div class="wp-block-button pre-footer-cta__button pre-footer-cta__button--2">
+                         <a class="wp-block-button__link has-white-color has-red-light-background-color has-text-color has-background" href="<?php echo esc_url( $wd_options_pre_footer_button_2['url'] ); ?>" <?php echo $button_2_target; ?>>
+                              <?php echo esc_html( $wd_options_pre_footer_button_2['title'] ); ?>
+                         </a>
+                    </div>
+
+                    <div class="wp-block-button pre-footer-cta__button pre-footer-cta__button--3">
+                         <a class="wp-block-button__link has-base-color-color has-white-background-color has-text-color has-background" href="<?php echo esc_url( $wd_options_pre_footer_button_3['url'] ); ?>" <?php echo $button_3_target; ?>>
+                              <?php echo esc_html( $wd_options_pre_footer_button_3['title'] ); ?>
+                         </a>
+                    </div>
+
+               </div>
+
+          </div>
+
+     </div>
+
+<?php }

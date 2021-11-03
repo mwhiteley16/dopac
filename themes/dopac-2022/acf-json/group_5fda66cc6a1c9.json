@@ -19,6 +19,110 @@
             "endpoint": 0
         },
         {
+            "key": "field_618297344e537",
+            "label": "Pre-Footer",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_618297434e538",
+            "label": "Image",
+            "name": "wd_options_pre_footer_image",
+            "type": "image",
+            "instructions": "Ideal size roughly 1400 x 300px.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_618299883cf39",
+            "label": "CTA Text",
+            "name": "wd_options_pre_footer_cta_text",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_618299993cf3a",
+            "label": "Button 1",
+            "name": "wd_options_pre_footer_button_1",
+            "type": "link",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_618299b23cf3b",
+            "label": "Button 2",
+            "name": "wd_options_pre_footer_button_2",
+            "type": "link",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_618299b43cf3c",
+            "label": "Button 3",
+            "name": "wd_options_pre_footer_button_3",
+            "type": "link",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_5fda66e37e61e",
             "label": "Footer",
             "name": "",
@@ -181,5 +285,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1635944530
+    "modified": 1635948984
 }
