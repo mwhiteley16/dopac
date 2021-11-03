@@ -52,7 +52,9 @@
 
           &.alignfull,
           &.alignwide,
-          &.aligncenter {
+          &.aligncenter,
+          .wp-block[data-align="full"] &,
+          .wp-block[data-align="wide"] & {
                @include spacing( 'vertical', null );
           }
      }

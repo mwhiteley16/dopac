@@ -188,6 +188,16 @@
           @if 'no-vertical' == $size {
                padding-top: 0;
                padding-bottom: 0;
+
+               @include media( 'tablet' ) {
+                    padding-top: 0;
+                    padding-bottom: 0;
+               }
+
+               @include media( 'mobile' ) {
+                    padding-top: 0;
+                    padding-bottom: 0;
+               }
           }
 
      }

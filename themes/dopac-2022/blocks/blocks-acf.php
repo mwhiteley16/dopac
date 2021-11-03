@@ -303,6 +303,38 @@ function wd_acf_blocks() {
 
           acf_register_block_type(
                [
+                    'name'			=> 'acf-slideshow-block',
+                    'title'			=> __( 'Slideshow Block', WD_CHILD_THEME_NAME ),
+                    'description'		=> __( 'A block used to create an image slideshow.', WD_CHILD_THEME_NAME ),
+                    'category'		=> 'wd-blocks',
+                    'mode'              => 'preview',
+                    'icon'			=> $block_icon,
+                    'enqueue_assets'  => function() {
+                         wp_enqueue_script( 'flickity', get_stylesheet_directory_uri() . '/assets/js/src/flickity.pkgd.min.js', [], null );
+                         wp_enqueue_script( 'acf-slideshow-slide', get_stylesheet_directory_uri() . '/blocks/acf-blocks/js/block-acf-slideshow.js', [ 'jquery' ], '', true );
+                    },
+                    'render_template'   => 'blocks/acf-blocks/templates/block-acf-slideshow.php',
+                    'align'             => 'wide',
+                    'keywords' => [
+                         'slideshow',
+                         'wd',
+                         'acf',
+                         WD_CHILD_THEME_SLUG
+                    ],
+                    'post_type' => [
+                         'post',
+                         'page'
+                    ],
+                    'supports' => [
+                         'align'           => [ 'wide', 'full' ],
+                         'anchor'          => false,
+                         'customClassName' => true,
+                    ]
+               ]
+          );
+
+          acf_register_block_type(
+               [
                     'name'			=> 'acf-team',
                     'title'			=> __( 'Team Block', WD_CHILD_THEME_NAME ),
                     'description'		=> __( 'A block to showcase team members block.', WD_CHILD_THEME_NAME ),

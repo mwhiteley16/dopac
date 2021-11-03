@@ -127,7 +127,7 @@
 ol.flickity-page-dots {
      list-style-type: none;
      position: absolute;
-     top: calc(100% + 15px);
+     bottom: 30px;
      left: 0;
      display: flex;
      justify-content: center;
@@ -141,20 +141,21 @@ ol.flickity-page-dots {
      }
 
      li {
-          width: 8px;
-          height: 8px;
-          border-radius: 8px;
-          background-color: $grey-medium;
-          margin-right: 8px;
+          width: 13px;
+          height: 13px;
+          border-radius: 15px;
+          background-color: $white;
+          border: 1px solid $blue;
+          margin: 0 7px;
           cursor: pointer;
           padding-bottom: 0;
 
           &:hover {
-               background-color: #ddd;
+               background-color: $blue;
           }
 
           &.is-selected {
-               background-color: $primary-color;
+               background-color: $blue;
           }
      }
 }

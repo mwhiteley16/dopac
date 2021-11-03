@@ -1,0 +1,66 @@
+/**
+ * /assets/scss/partials/blocks/acf/blocks-slideshow.scss
+ *
+ * Let's define our slideshow block styles
+ *
+ *
+ */
+
+.slideshow-block {
+     position: relative;
+
+     &__slides {
+          width: 100%;
+     }
+
+     &__slide {
+          width: 100%;
+          display: block;
+          @extend %transition;
+
+          &.is-selected {
+               padding: 0;
+          }
+
+          img {
+               display: block;
+               width: 100%;
+          }
+     }
+
+     .flickity-prev-next-button {
+
+          &[disabled] {
+               cursor: not-allowed;
+               opacity: 0.5;
+          }
+
+          svg {
+               width: 18px;
+               left: 6px;
+          }
+
+          .arrow {
+               fill: $blue;
+          }
+
+          &.previous {
+               left: 20px;
+          }
+
+          &.next {
+               right: 20px;
+          }
+
+          @media(max-width:850px) {
+               display: none;
+          }
+     }
+
+     @media(max-width:850px) {
+
+          .flickity-page-dots {
+               display: none !important;
+          }
+     }
+}
