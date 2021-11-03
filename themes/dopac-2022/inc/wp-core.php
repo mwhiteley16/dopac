@@ -287,7 +287,7 @@ function wd_admin_menu_cleanup() {
 /**
 * Add custom image sizes
 */
-// add_image_size( 'size-name', 000, 000, true );
+add_image_size( 'dopac-thumbnail', 600, 350, true );
 
 /**
 * Add search to primary nav menu

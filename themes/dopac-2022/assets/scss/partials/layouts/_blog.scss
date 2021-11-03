@@ -27,6 +27,57 @@
      @include media( 'mobile' ) {
           grid-template-columns: 1fr;
      }
+
+     @include media( 'tablet+' ) {
+          .post-count-2 & {
+               grid-template-columns: repeat( 2, 1fr );
+          }
+     }
+}
+
+.loop-item {
+     background-color: $white;
+
+     &__thumbnail {
+          display: block;
+          width: 100%;
+
+          img {
+               display: block;
+               width: 100%;
+          }
+     }
+
+     &__content {
+          display: block;
+          width: 100%;
+          padding: $base-margin;
+     }
+
+     &__title {
+          font-size: 21px;
+          margin-bottom: 16px;
+
+          a {
+               color: $blue;
+               text-decoration: underline;
+          }
+
+          &:hover > a {
+               color: $base-color;
+               text-decoration: underline;
+          }
+     }
+
+     &__excerpt {
+
+          p {
+
+               &:last-child {
+                    margin-bottom: 0;
+               }
+          }
+     }
 }
 
 /* ----- Single -------------------- */

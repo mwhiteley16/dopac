@@ -12,6 +12,7 @@
 $wd_recent_posts_block_display_type = get_field( 'wd_recent_posts_block_display_type' );
 $wd_recent_posts_block_category = get_field( 'wd_recent_posts_block_category' );
 $wd_recent_posts_block_number_of_posts = get_field( 'wd_recent_posts_block_number_of_posts' );
+$wd_recent_posts_choose_posts = get_field( 'wd_recent_posts_choose_posts' );
 
 // disable pointer events (admin only)
 
@@ -22,7 +23,7 @@ if ( ! empty( $block['anchor'] ) ) { // add anchor if present
 }
 
 // block Classes
-$block_classes = 'acf-block recent-posts-block';
+$block_classes = 'acf-block recent-posts-block post-count-' . $wd_recent_posts_block_number_of_posts;
 
 // optionally disable pointer events (prevent clicking links within block editor)
 $disable_pointer_events = true;
@@ -52,6 +53,12 @@ if ( ! empty( $block['className'] ) ) { // custom class name
      // include selected category if category option is set
      if ( $wd_recent_posts_block_display_type == 'category-posts' ) {
           $args['cat'] = $wd_recent_posts_block_category;
+     }
+
+     // include selected posts if manual option is set
+     if ( $wd_recent_posts_block_display_type == 'manual-posts' ) {
+          $args['post__in'] = $wd_recent_posts_choose_posts;
+          $args['orderby']  = 'post__in';
      }
 
      $recent_query = new WP_Query( $args );

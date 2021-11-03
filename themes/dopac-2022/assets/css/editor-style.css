@@ -338,6 +338,33 @@ input[type="search"] {
   @media (max-width: 600px) {
     .loop-wrapper {
       grid-template-columns: 1fr; } }
+  @media (min-width: 769px) {
+    .post-count-2 .loop-wrapper {
+      grid-template-columns: repeat(2, 1fr); } }
+.loop-item {
+  background-color: #fff; }
+  .loop-item__thumbnail {
+    display: block;
+    width: 100%; }
+    .loop-item__thumbnail img {
+      display: block;
+      width: 100%; }
+  .loop-item__content {
+    display: block;
+    width: 100%;
+    padding: 30px; }
+  .loop-item__title {
+    font-size: 21px;
+    margin-bottom: 16px; }
+    .loop-item__title a {
+      color: #002868;
+      text-decoration: underline; }
+    .loop-item__title:hover > a {
+      color: #4a4a4a;
+      text-decoration: underline; }
+  .loop-item__excerpt p:last-child {
+    margin-bottom: 0; }
+
 /* ----- Single -------------------- */
 /**
  * /assets/scss/partials/layouts/flickity.scss

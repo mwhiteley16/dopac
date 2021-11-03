@@ -28,5 +28,4 @@ require_once WD_PLUGIN_PATH.'/lib/post-types/post-type-block-areas.php';
 /**
 * functionality
 */
-require_once WD_PLUGIN_PATH.'/lib/functionality/disable-blog.php';
 require_once WD_PLUGIN_PATH.'/lib/functionality/pets.php';
