@@ -911,7 +911,9 @@ ol.flickity-page-dots {
   margin-bottom: 0; }
 
 .wp-block-group.alignfull, .wp-block[data-align="full"] .wp-block-group {
-  padding: 30px; }
+  padding: 30px;
+  padding-top: 0;
+  padding-bottom: 0; }
   @media (max-width: 768px) {
     .wp-block-group.alignfull, .wp-block[data-align="full"] .wp-block-group {
       padding: 30px; } }
@@ -1104,14 +1106,6 @@ ol.is-style-styled-list {
   @media (max-width: 600px) {
     .wp-block-media-text .wp-block-media-text__content {
       padding: 0; } }
-@media (max-width: 1180px) {
-  .wp-block-media-text.alignwide {
-    margin: 0 !important; } }
-
-@media (max-width: 600px) {
-  .wp-block-media-text.alignfull .wp-block-media-text__content, .wp-block-media-text.alignwide .wp-block-media-text__content {
-    padding: 0 20px; } }
-
 .wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
   padding-left: 0;
   padding-right: 50px; }
@@ -1143,6 +1137,23 @@ ol.is-style-styled-list {
   .wp-block-media-text.is-style-mobile-image-top .wp-block-media-text__media {
     -ms-grid-row: 1 !important;
     grid-row: 1 !important; } }
+
+.wp-block-media-text.alignwide .wp-block-media-text__content {
+  max-width: calc(1120px / 2);
+  padding: 30px 0 30px 100px; }
+  @media (max-width: 1200px) {
+    .wp-block-media-text.alignwide .wp-block-media-text__content {
+      max-width: none;
+      padding: 40px; } }
+@media (min-width: 1201px) {
+  .wp-block-media-text.alignwide.has-media-on-the-right .wp-block-media-text__content {
+    padding-left: 0;
+    padding-right: 100px;
+    justify-self: end; } }
+
+@media (max-width: 600px) {
+  .wp-block-media-text.alignfull .wp-block-media-text__content {
+    padding: 0 20px; } }
 
 /**
  * /assets/scss/partials/blocks/core/blocks-core-paragraphs.scss
@@ -1711,10 +1722,11 @@ hr.wp-block-separator {
   margin-right: calc(50% - 50vw);
   max-width: 100vw;
   width: auto; }
-  @media (min-width: 769px) {
+  @media (min-width: 1421px) {
     .full-width-content .entry-content > *.alignwide, .content .entry-content > *.alignwide, .full-width-content .block-area > *.alignwide, .content .block-area > *.alignwide {
-      margin-left: calc(25% - 25vw);
-      margin-right: calc(25% - 25vw); } }
+      margin-left: -150px;
+      margin-right: -150px;
+      max-width: calc(100% + 300px); } }
 .full-width-content .entry-content > *.alignfull, .content .entry-content > *.alignfull, .full-width-content .block-area > *.alignfull, .content .block-area > *.alignfull {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
