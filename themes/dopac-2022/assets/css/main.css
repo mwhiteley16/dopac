@@ -1725,12 +1725,9 @@ ol.flickity-page-dots {
      -moz-column-gap: 32px;
           column-gap: 32px;
   row-gap: 32px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
   margin-bottom: 100px; }
-  @media (max-width: 1000px) {
-    .pet-listings {
-      grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 768px) {
     .pet-listings {
       grid-template-columns: repeat(2, 1fr); } }

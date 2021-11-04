@@ -89,6 +89,7 @@ function ja_pet_listing() {
 
 				$id    = esc_html( $result['ID'] );
 				$photo = esc_url( str_replace( 'http://', 'https://' , $result['Photo'] ) );
+                    $photo = str_replace( '_TN1', '', $photo ); // array only returns thumbnail image which has _TN1 at end of string. Remove this to show larger image
 				$name  = esc_html( $result['Name'] );
 				$sex   = esc_html( $result['Sex'] );
 				$age   = esc_html( $result['Age'] );
