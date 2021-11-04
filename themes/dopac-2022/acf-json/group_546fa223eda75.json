@@ -1,0 +1,68 @@
+{
+    "key": "group_546fa223eda75",
+    "title": "Pet of the Week",
+    "fields": [
+        {
+            "key": "field_546fa246b2c56",
+            "label": "Dog Pet ID",
+            "name": "_ja_pet_id",
+            "type": "text",
+            "instructions": "Please enter the Pet ID for the dog you would like to feature.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_547497842d6cf",
+            "label": "Cat Pet ID",
+            "name": "_ja_pet2_id",
+            "type": "text",
+            "instructions": "Please enter the Pet ID for the cat you would like to feature.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "138"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "field",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1636043909
+}

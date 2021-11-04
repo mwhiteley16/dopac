@@ -15,7 +15,7 @@ textarea,
 input {
   color: #4a4a4a;
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   font-weight: 400;
   height: auto;
@@ -99,7 +99,7 @@ button.gform_button {
 /**
 * Transitions
 */
-.slideshow-block__slide, .block-editor-block-list__layout .wp-block-image.is-style-hide-desktop, .mobile-navigation-icon span, .mobile-navigation-icon, .nav-primary ul.menu li.menu-item.menu-item--search button svg, .nav-primary ul.menu .menu-item ul.sub-menu,
+.slideshow-block__slide, .block-editor-block-list__layout .wp-block-image.is-style-hide-desktop, .pet-listings .pet-listing, .mobile-navigation-icon span, .mobile-navigation-icon, .nav-primary ul.menu li.menu-item.menu-item--search button svg, .nav-primary ul.menu .menu-item ul.sub-menu,
 .top-menu ul.top-menu__menu .menu-item ul.sub-menu, .nav-primary ul.menu .menu-item.menu-button a span,
 .top-menu ul.top-menu__menu .menu-item.menu-button a span, .site-footer .social-media__link i, a, button,
 input:focus,
@@ -1708,6 +1708,129 @@ ol.flickity-page-dots {
       .archive-pager .facetwp-facet button.facetwp-hidden {
         display: none; }
 
+/**
+ * /assets/scss/partials/layouts/pets.scss
+ *
+ * Let's define our pets styles
+ *
+ * - Archive
+ * - Single
+ *
+ */
+/* ----- Archive -------------------- */
+.pet-listings {
+  display: grid;
+  flex-wrap: wrap;
+  -webkit-column-gap: 32px;
+     -moz-column-gap: 32px;
+          column-gap: 32px;
+  row-gap: 32px;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  margin-bottom: 100px; }
+  @media (max-width: 1000px) {
+    .pet-listings {
+      grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 768px) {
+    .pet-listings {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) {
+    .pet-listings {
+      grid-template-columns: 1fr; } }
+  .pet-listings img {
+    display: block;
+    width: 100%; }
+  .pet-listings .pet-listing {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+    border-bottom: 10px solid #8c1a11; }
+    .pet-listings .pet-listing:hover {
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4); }
+  .pet-listings .details {
+    display: block;
+    width: 100%;
+    padding: 30px;
+    text-align: center; }
+  .pet-listings h4.name {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0; }
+    .pet-listings h4.name a {
+      color: #002868; }
+      .pet-listings h4.name a:hover {
+        color: #000; }
+  .pet-listings p {
+    margin-bottom: 0; }
+    .pet-listings p.breed {
+      margin-bottom: 15px; }
+    .pet-listings p.age {
+      margin-bottom: 30px; }
+  .pet-listings a.button {
+    text-transform: uppercase;
+    font-size: 14px;
+    text-decoration: underline;
+    color: #4a4a4a; }
+
+/* ----- Single -------------------- */
+.pet-details {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 15px 0; }
+  .pet-details__left {
+    flex: 1; }
+    @media (max-width: 900px) {
+      .pet-details__left {
+        flex: none;
+        width: 100%; } }
+  .pet-details__right {
+    width: 400px;
+    margin-left: 15px;
+    background-color: rgba(188, 151, 116, 0.2); }
+    @media (max-width: 900px) {
+      .pet-details__right {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 15px; } }
+    .pet-details__right table {
+      margin-bottom: 0;
+      width: 100%; }
+      .pet-details__right table tr:nth-child(even) td {
+        background-color: rgba(255, 255, 255, 0.4); }
+      .pet-details__right table td {
+        border: none;
+        padding: 15px;
+        font-size: 16px; }
+        .pet-details__right table td:first-child {
+          font-weight: 600;
+          border-right: 4px solid rgba(255, 255, 255, 0.4); }
+  .pet-details__name {
+    padding: 15px;
+    margin: 0; }
+  .pet-details__content {
+    display: block;
+    width: 100%;
+    background-color: #f2f5f7;
+    padding: 30px; }
+    .pet-details__content .wp-block-buttons {
+      display: grid;
+      -webkit-column-gap: 30px;
+         -moz-column-gap: 30px;
+              column-gap: 30px;
+      row-gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%; }
+      @media (max-width: 768px) {
+        .pet-details__content .wp-block-buttons {
+          grid-template-columns: repeat(1, 1fr);
+          row-gap: 20px; } }
+      .pet-details__content .wp-block-buttons .wp-block-button {
+        margin-bottom: 0;
+        text-align: center; }
+        .pet-details__content .wp-block-buttons .wp-block-button__link {
+          width: 100%; }
+          @media (max-width: 768px) {
+            .pet-details__content .wp-block-buttons .wp-block-button__link {
+              max-width: 200px; } }
 /**
  * /assets/scss/partials/layouts/search.scss
  *

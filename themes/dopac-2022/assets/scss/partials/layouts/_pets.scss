@@ -1,0 +1,177 @@
+/**
+ * /assets/scss/partials/layouts/pets.scss
+ *
+ * Let's define our pets styles
+ *
+ * - Archive
+ * - Single
+ *
+ */
+
+/* ----- Archive -------------------- */
+.pet-listings {
+     display: grid;
+     flex-wrap: wrap;
+     column-gap: 32px;
+     row-gap: 32px;
+     grid-template-columns: repeat( 4, 1fr );
+     width: 100%;
+     margin-bottom: 100px;
+
+     @media(max-width:1000px) {
+          grid-template-columns: repeat( 3, 1fr );
+     }
+
+     @include media( 'tablet' ) {
+          grid-template-columns: repeat( 2, 1fr );
+     }
+
+     @include media( 'mobile' ) {
+          grid-template-columns: 1fr;
+     }
+
+     img {
+          display: block;
+          width: 100%;
+     }
+
+     .pet-listing {
+          box-shadow: 0 10px 10px rgba(0,0,0,0.25);
+          border-bottom: 10px solid $red;
+          @extend %transition;
+
+          &:hover {
+               box-shadow: 0 5px 10px rgba( 0,0,0,0.4);
+          }
+     }
+
+     .details {
+          display: block;
+          width: 100%;
+          padding: 30px;
+          text-align: center;
+     }
+
+     h4.name {
+          font-size: 24px;
+          font-weight: 700;
+          margin: 0;
+
+          a {
+               color: $blue;
+
+               &:hover {
+                    color: $black;
+               }
+          }
+     }
+
+     p {
+          margin-bottom: 0;
+
+          &.breed {
+               margin-bottom: 15px;
+          }
+
+          &.age {
+               margin-bottom: 30px;
+          }
+     }
+
+     a.button {
+          text-transform: uppercase;
+          font-size: 14px;
+          text-decoration: underline;
+          color: $base-color;
+     }
+}
+
+/* ----- Single -------------------- */
+.pet-details {
+     display: flex;
+     flex-wrap: wrap;
+     width: 100%;
+     margin: 15px 0;
+
+     &__left {
+          flex: 1;
+
+          @include media( 'medium' ) {
+               flex: none;
+               width: 100%;
+          }
+     }
+
+     &__right {
+          width: 400px;
+          margin-left: 15px;
+          background-color: rgba(188,151,116,0.2);
+
+          @include media( 'medium' ) {
+               width: 100%;
+               margin-left: 0;
+               margin-top: 15px;
+          }
+
+          table {
+               margin-bottom: 0;
+               width: 100%;
+
+               tr:nth-child(even) {
+
+                    td {
+                         background-color: rgba(255,255,255,0.4);
+                    }
+               }
+
+               td {
+                    border: none;
+                    padding: 15px;
+                    font-size: 16px;
+
+                    &:first-child {
+                         font-weight: 600;
+                         border-right: 4px solid rgba(255,255,255,0.4);
+                    }
+               }
+          }
+     }
+
+     &__name {
+          padding: 15px;
+          margin: 0;
+     }
+
+     &__content {
+          display: block;
+          width: 100%;
+          background-color: $blue-light;
+          padding: 30px;
+
+          .wp-block-buttons {
+               display: grid;
+               column-gap: 30px;
+               row-gap: 30px;
+               grid-template-columns: repeat( 3, 1fr );
+               width: 100%;
+
+               @include media( 'tablet' ) {
+                    grid-template-columns: repeat( 1, 1fr );
+                    row-gap: 20px;
+               }
+
+               .wp-block-button {
+                    margin-bottom: 0;
+                    text-align: center;
+
+                    &__link {
+                         width: 100%;
+
+                         @include media( 'tablet' ) {
+                              max-width: 200px;
+                         }
+                    }
+               }
+          }
+     }
+}
