@@ -18,4 +18,31 @@
           max-width: $base-width;
           margin: 0 auto;
      }
+
+     &.is-style-stack-mobile {
+
+          @include media( 'mobile' ) {
+               min-height: 0 !important;
+               padding: 0;
+               flex-wrap: wrap;
+
+               img.wp-block-cover__image-background {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    right: auto;
+                    bottom: auto;
+                    height: auto;
+                    object-fit: none;
+               }
+
+               .wp-block-cover__inner-container {
+                    margin: 20px 0 !important;
+
+                    .wp-block-button {
+                         margin: 0 !important;
+                    }
+               }
+          }
+     }
 }

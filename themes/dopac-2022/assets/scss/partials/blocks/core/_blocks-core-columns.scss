@@ -146,7 +146,8 @@
      }
 
      &.is-style-wide-break,
-     &.is-variation-2-columns-sidebar {
+     &.is-variation-2-columns-sidebar,
+     &.is-style-no-col-gap {
 
           @include media( 'medium' ) {
                flex-wrap: wrap;
@@ -170,8 +171,12 @@
                     margin-left: 0;
                }
 
-               @include media( 'mobile+' ) {
+               @include media( 'medium+' ) {
                     flex-basis: 50% !important;
+               }
+
+               @include media( 'medium' ) {
+                    margin-top: 0 !important;
                }
           }
      }

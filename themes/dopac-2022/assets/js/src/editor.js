@@ -47,6 +47,23 @@ wp.domReady( () => {
 
      // column styles
      wp.blocks.registerBlockStyle(
+          'core/cover',
+          [
+               {
+                    name: 'default',
+                    label: 'Default',
+                    isDefault: true,
+               },
+               {
+                    name: 'stack-mobile',
+                    label: 'Stack Mobile',
+               }
+          ]
+     );
+
+
+     // column styles
+     wp.blocks.registerBlockStyle(
           'core/group',
           [
                {

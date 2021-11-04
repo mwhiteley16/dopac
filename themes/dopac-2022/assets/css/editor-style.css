@@ -874,18 +874,21 @@ ol.flickity-page-dots {
     .wp-block-columns.is-variation-5-columns .wp-block-column:not(:first-child) {
       margin-top: 30px; } }
   @media (max-width: 900px) {
-    .wp-block-columns.is-style-wide-break, .wp-block-columns.is-variation-2-columns-sidebar {
+    .wp-block-columns.is-style-wide-break, .wp-block-columns.is-variation-2-columns-sidebar, .wp-block-columns.is-style-no-col-gap {
       flex-wrap: wrap; }
-      .wp-block-columns.is-style-wide-break .wp-block-column, .wp-block-columns.is-variation-2-columns-sidebar .wp-block-column {
+      .wp-block-columns.is-style-wide-break .wp-block-column, .wp-block-columns.is-variation-2-columns-sidebar .wp-block-column, .wp-block-columns.is-style-no-col-gap .wp-block-column {
         flex-basis: 100% !important;
         margin-left: 0; }
-        .wp-block-columns.is-style-wide-break .wp-block-column:not(:first-child), .wp-block-columns.is-variation-2-columns-sidebar .wp-block-column:not(:first-child) {
+        .wp-block-columns.is-style-wide-break .wp-block-column:not(:first-child), .wp-block-columns.is-variation-2-columns-sidebar .wp-block-column:not(:first-child), .wp-block-columns.is-style-no-col-gap .wp-block-column:not(:first-child) {
           margin-top: 30px; } }
   .wp-block-columns.is-style-no-col-gap .wp-block-column:not(:first-child) {
     margin-left: 0; }
-  @media (min-width: 601px) {
+  @media (min-width: 901px) {
     .wp-block-columns.is-style-no-col-gap .wp-block-column {
       flex-basis: 50% !important; } }
+  @media (max-width: 900px) {
+    .wp-block-columns.is-style-no-col-gap .wp-block-column {
+      margin-top: 0 !important; } }
 /**
  * /assets/scss/partials/blocks/core/blocks-core-cover.scss
  *
@@ -908,7 +911,24 @@ ol.flickity-page-dots {
   .wp-block-cover__inner-container {
     max-width: 1120px;
     margin: 0 auto; }
-
+  @media (max-width: 600px) {
+    .wp-block-cover.is-style-stack-mobile {
+      min-height: 0 !important;
+      padding: 0;
+      flex-wrap: wrap; }
+      .wp-block-cover.is-style-stack-mobile img.wp-block-cover__image-background {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        height: auto;
+        -o-object-fit: none;
+           object-fit: none; }
+      .wp-block-cover.is-style-stack-mobile .wp-block-cover__inner-container {
+        margin: 20px 0 !important; }
+        .wp-block-cover.is-style-stack-mobile .wp-block-cover__inner-container .wp-block-button {
+          margin: 0 !important; } }
 /**
  * /assets/scss/partials/blocks/core/blocks-core-gallery.scss
  *
