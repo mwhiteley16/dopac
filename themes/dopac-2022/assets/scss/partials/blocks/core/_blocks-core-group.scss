@@ -58,4 +58,13 @@
                @include spacing( 'vertical', null );
           }
      }
+
+     &.is-style-outline {
+          border: 1px solid #dadada;
+          padding: $base-margin;
+
+          @include media( 'mobile' ) {
+               padding: $mobile-margin;
+          }
+     }
 }

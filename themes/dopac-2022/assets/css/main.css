@@ -3792,6 +3792,12 @@ select {
       .wp-block-group.has-background.alignfull, .wp-block-group.has-background.alignwide, .wp-block-group.has-background.aligncenter, .wp-block[data-align="full"] .wp-block-group.has-background, .wp-block[data-align="wide"] .wp-block-group.has-background {
         padding-top: 40px;
         padding-bottom: 40px; } }
+.wp-block-group.is-style-outline {
+  border: 1px solid #dadada;
+  padding: 30px; }
+  @media (max-width: 600px) {
+    .wp-block-group.is-style-outline {
+      padding: 20px; } }
 /**
  * /assets/scss/partials/blocks/core/blocks-core-image.scss
  *
