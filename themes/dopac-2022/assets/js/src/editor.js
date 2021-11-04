@@ -45,6 +45,23 @@ wp.domReady( () => {
      );
 
 
+     // column styles
+     wp.blocks.registerBlockStyle(
+          'core/group',
+          [
+               {
+                    name: 'default',
+                    label: 'Default',
+                    isDefault: true,
+               },
+               {
+                    name: 'outline',
+                    label: 'Outline',
+               }
+          ]
+     );
+
+
      // heading styles
      wp.blocks.registerBlockStyle(
           'core/heading',
@@ -248,6 +265,19 @@ wp.domReady( () => {
                     icon: 'star-filled',
                     attributes: {
                          className: 'is-variation-2-columns'
+                    },
+                    scope: [ 'block' ],
+                    innerBlocks: [
+                         [ 'core/column' ],
+                         [ 'core/column' ],
+                    ],
+               },
+               {
+                    name: 'two-columns-sidebar',
+                    title: '2 Columns Sidebar',
+                    icon: 'star-filled',
+                    attributes: {
+                         className: 'is-variation-2-columns-sidebar'
                     },
                     scope: [ 'block' ],
                     innerBlocks: [

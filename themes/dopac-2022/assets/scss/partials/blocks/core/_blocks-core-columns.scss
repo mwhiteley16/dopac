@@ -31,6 +31,23 @@
           }
      }
 
+     @include media( 'medium+' ) {
+          &.is-variation-2-columns-sidebar {
+
+               .wp-block-column {
+
+                    &:first-child {
+                         flex-basis: 60% !important;
+                    }
+
+                    &:last-child {
+                         flex-basis: calc(40% - 80px) !important;
+                         margin-left: 80px;
+                    }
+               }
+          }
+     }
+
      &.is-variation-3-columns {
 
           @media(max-width:781px) {
@@ -128,7 +145,8 @@
           }
      }
 
-     &.is-style-wide-break {
+     &.is-style-wide-break,
+     &.is-variation-2-columns-sidebar {
 
           @include media( 'medium' ) {
                flex-wrap: wrap;
