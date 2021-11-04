@@ -4275,6 +4275,58 @@ hr.wp-block-separator {
     order: 1; }
 
 /**
+ * /assets/scss/partials/blocks/acf/blocks-info-grid.scss
+ *
+ * Let's define our information grid block styles
+ *
+ *
+ */
+.info-grid-block {
+  display: block;
+  width: 100%; }
+  .info-grid-block__grid {
+    display: grid;
+    flex-wrap: wrap;
+    -webkit-column-gap: 30px;
+       -moz-column-gap: 30px;
+            column-gap: 30px;
+    row-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%; }
+    @media (max-width: 768px) {
+      .info-grid-block__grid {
+        grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) {
+      .info-grid-block__grid {
+        grid-template-columns: 1fr; } }
+    @media (min-width: 769px) {
+      .column-count-2 .info-grid-block__grid {
+        grid-template-columns: repeat(2, 1fr); } }
+  .info-grid-block__item {
+    background-color: #fff; }
+  .info-grid-block__image {
+    display: block;
+    width: 100%; }
+    .info-grid-block__image img {
+      display: block;
+      width: 100%; }
+  .info-grid-block__content {
+    display: block;
+    width: 100%;
+    padding: 30px; }
+  .info-grid-block__title {
+    font-size: 21px;
+    margin-bottom: 16px; }
+    .info-grid-block__title a {
+      color: #002868;
+      text-decoration: underline; }
+    .info-grid-block__title:hover > a {
+      color: #4a4a4a;
+      text-decoration: underline; }
+  .info-grid-block__description p:last-child {
+    margin-bottom: 0; }
+
+/**
  * /assets/scss/partials/blocks/acf/blocks-max-width.scss
  *
  * Let's define our max-width block styles

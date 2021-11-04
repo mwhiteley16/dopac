@@ -221,6 +221,33 @@ function wd_acf_blocks() {
 
           acf_register_block_type(
                [
+                    'name'			=> 'acf-information-grid',
+                    'title'			=> __( 'Information Grid Block', WD_CHILD_THEME_NAME ),
+                    'description'		=> __( 'A block to display information in a grid format.', WD_CHILD_THEME_NAME ),
+                    'category'		=> 'wd-blocks',
+                    'mode'              => 'preview',
+                    'render_template'   => 'blocks/acf-blocks/templates/block-acf-info-grid.php',
+                    'icon'              => $block_icon,
+                    'keywords' => [
+                         'information grid',
+                         'wd',
+                         'acf',
+                         WD_CHILD_THEME_SLUG
+                    ],
+                    'post_type' => [
+                         'post',
+                         'page'
+                    ],
+                    'supports' => [
+                         'align'           => false,
+                         'anchor'          => false,
+                         'customClassName' => true
+                    ]
+               ]
+          );
+
+          acf_register_block_type(
+               [
                     'name'			=> 'acf-max-width-block',
                     'title'			=> __( 'Max-Width Block', WD_CHILD_THEME_NAME ),
                     'description'		=> __( 'A block to wrap any content in a max-width container with alignment options.', WD_CHILD_THEME_NAME ),
