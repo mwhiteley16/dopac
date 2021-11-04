@@ -1,0 +1,70 @@
+{
+    "key": "group_6183f0529a91e",
+    "title": "Page Options",
+    "fields": [
+        {
+            "key": "field_6183f091e60bf",
+            "label": "Enable Title Over Featured Image",
+            "name": "wd_enable_title_over_featured_image",
+            "type": "true_false",
+            "instructions": "Optionally, enable page title over thubmanil image in header of page. Requires featured image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6183f05ce60be",
+            "label": "Hero Image Overlay Text Override",
+            "name": "wd_hero_image_overlay_text_override",
+            "type": "textarea",
+            "instructions": "Optionally enter text to override the page title.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6183f091e60bf",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1636036917
+}

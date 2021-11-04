@@ -278,3 +278,36 @@ function wd_pre_footer_cta() {
      </div>
 
 <?php }
+
+
+/**
+* Customized header area on pages
+*/
+add_action( 'genesis_after_header', 'wd_custom_page_header', 18 );
+function wd_custom_page_header() {
+
+     $wd_enable_title_over_featured_image = get_field( 'wd_enable_title_over_featured_image', get_the_ID() );
+
+     if ( is_page() && has_post_thumbnail() && $wd_enable_title_over_featured_image == 1 ) {
+          remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+          remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+          remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
+
+          $wd_hero_image_overlay_text_override = get_field( 'wd_hero_image_overlay_text_override', get_the_ID() );
+          $title_text = ! empty( $wd_hero_image_overlay_text_override ) ? $wd_hero_image_overlay_text_override : get_the_title();
+
+          echo '<header class="entry-header entry-header--with-thumbnail">';
+
+               echo '<div class="entry-header__thumbnail">';
+                    the_post_thumbnail();
+               echo '</div>';
+
+               echo '<div class="wrap">';
+                    echo '<h1 class="entry-title">';
+                         echo $title_text;
+                    echo '</h2>';
+               echo '</div>';
+
+          echo '</header>';
+     }
+}
