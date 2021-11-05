@@ -208,6 +208,7 @@ function ja_pet_listing_details() {
 			$name         = esc_html( $results['AnimalName'] );
 			$breed        = esc_html( $results['PrimaryBreed'] );
 			$breed2       = esc_html( $results['SecondaryBreed'] );
+               $species      = esc_html( $results['Species'] );
 			$sex          = esc_html( $results['Sex'] );
 			$age          = esc_html( $results['Age'] );
 			$spayed       = esc_html( $results['Altered'] );
@@ -222,6 +223,11 @@ function ja_pet_listing_details() {
 			$photo2       = esc_url( str_replace( 'http://', 'https://' , $results['Photo2'] ) );
 			$photo3       = esc_url( str_replace( 'http://', 'https://' , $results['Photo3'] ) );
 			$desc         = !empty( $results['Dsc'] ) ? esc_html( $results['Dsc'] ) : '';
+
+               $sponsor_link = '/donate/kennel-sponsorship/';
+               $adopt_link = $species == 'Cat' ? '/cat-adoption-survey/' : '/dog-adoption-survey/';
+               $more_animals = $species == 'Cat' ? '/get-involved/adopt-an-animal/cats/' : '/get-involved/adopt-an-animal/dogs/';
+               $more_animals_text = $species == 'Cat' ? 'Cats' : 'Dogs';
 
 			if ( is_super_admin() ) {
 				//print_r( $results );
@@ -252,20 +258,20 @@ function ja_pet_listing_details() {
                               echo '<div class="wp-block-buttons">';
 
                                    echo '<div class="wp-block-button has-small-font-size">';
-                                        echo '<a class="wp-block-button__link has-white-color has-red-background-color has-text-color has-background" href="#">';
+                                        echo '<a class="wp-block-button__link has-white-color has-red-background-color has-text-color has-background" href="' . $adopt_link . '">';
                                              echo 'Adopt Me';
                                         echo '</a>';
                                    echo '</div>';
 
                                    echo '<div class="wp-block-button has-small-font-size">';
-                                        echo '<a class="wp-block-button__link has-white-color has-blue-background-color has-text-color has-background" href="#">';
+                                        echo '<a class="wp-block-button__link has-white-color has-blue-background-color has-text-color has-background" href="' . $sponsor_link . '">';
                                              echo 'Sponsor Me';
                                         echo '</a>';
                                    echo '</div>';
 
                                    echo '<div class="wp-block-button is-style-inverse has-small-font-size">';
-                                        echo '<a class="wp-block-button__link has-red-color has-red-background-color has-text-color has-background" href="#">';
-                                             echo 'See Other Dogs';
+                                        echo '<a class="wp-block-button__link has-red-color has-red-background-color has-text-color has-background" href="' . $more_animals . '">';
+                                             echo 'See Other ' . $more_animals_text;
                                         echo '</a>';
                                    echo '</div>';
 
