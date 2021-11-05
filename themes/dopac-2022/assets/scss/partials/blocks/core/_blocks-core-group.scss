@@ -61,10 +61,10 @@
 
      &.is-style-outline {
           border: 1px solid #dadada;
-          padding: $base-margin;
+          padding: $base-margin !important; // overrides nested block editor padding
 
           @include media( 'mobile' ) {
-               padding: $mobile-margin;
+               padding: $mobile-margin !important;
           }
      }
 }

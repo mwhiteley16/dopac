@@ -4149,10 +4149,10 @@ select {
         padding-bottom: 40px; } }
 .wp-block-group.is-style-outline {
   border: 1px solid #dadada;
-  padding: 30px; }
+  padding: 30px !important; }
   @media (max-width: 600px) {
     .wp-block-group.is-style-outline {
-      padding: 20px; } }
+      padding: 20px !important; } }
 /**
  * /assets/scss/partials/blocks/core/blocks-core-image.scss
  *
