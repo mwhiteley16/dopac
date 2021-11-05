@@ -92,6 +92,14 @@ function ja_upcoming_event() {
 					}
 				echo '</p>';
 
+                    $wd_cpt_event_type = get_field( 'wd_cpt_event_type' );
+                    if ( ! empty( $wd_cpt_event_type ) ) {
+                         echo '<div class="single-events-type">';
+                              echo '<img src="' . get_stylesheet_directory_uri() . '/assets/images/utility/sound.svg" alt="Sound Icon">';
+                              echo '<span>' . $wd_cpt_event_type . '</span>';
+                         echo '</div>';
+                    }
+
                     echo '<span class="event-header-excerpt">';
                          echo get_the_excerpt();
                     echo '</span>';

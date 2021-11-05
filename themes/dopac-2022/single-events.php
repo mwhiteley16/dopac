@@ -61,6 +61,14 @@ function wd_events_single_above_content() { ?>
           echo '</div>';
      } ?>
 
+     <?php $wd_cpt_event_type = get_field( 'wd_cpt_event_type' ); ?>
+     <?php if ( ! empty( $wd_cpt_event_type ) ) : ?>
+          <div class="single-events-type">
+               <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/utility/sound.svg" alt="Sound Icon">
+               <span><?php echo $wd_cpt_event_type; ?></span>
+          </div>
+     <?php endif; ?>
+
 <?php }
 
 

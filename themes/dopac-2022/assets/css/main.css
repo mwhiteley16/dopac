@@ -850,10 +850,27 @@ h2.upcoming-events-header {
   position: relative; }
   .event-item__thumbnail {
     display: block;
-    width: 100%; }
+    width: 100%;
+    position: relative; }
     .event-item__thumbnail img {
       display: block;
       width: 100%; }
+  .event-item__type {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 25px 10px 50px; }
+    .event-item__type img {
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      height: 26px;
+      width: 26px; }
+    .event-item__type span {
+      color: #8c1a11;
+      font-size: 16px; }
   .event-item__content {
     display: block;
     width: 100%;
@@ -938,6 +955,21 @@ h2.upcoming-events-header {
   color: #8c1a11;
   font-weight: 600;
   margin-bottom: 7px; }
+
+.single-events-type {
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-items: center;
+  margin-bottom: 20px; }
+  .single-events-type img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px; }
+  .single-events-type span {
+    color: #8c1a11;
+    font-size: 18px;
+    font-weight: 600; }
 
 /**
  * /assets/scss/partials/layouts/flickity.scss

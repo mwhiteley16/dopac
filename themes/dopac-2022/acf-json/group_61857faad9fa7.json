@@ -1,0 +1,43 @@
+{
+    "key": "group_61857faad9fa7",
+    "title": "Event Fields",
+    "fields": [
+        {
+            "key": "field_61857fc064a1b",
+            "label": "Event Type",
+            "name": "wd_cpt_event_type",
+            "type": "text",
+            "instructions": "Optionally add extra\"event type\" text to show on this event.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "events"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1636138993
+}

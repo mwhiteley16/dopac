@@ -77,10 +77,33 @@ h2.upcoming-events-header {
      &__thumbnail {
           display: block;
           width: 100%;
+          position: relative;
 
           img {
                display: block;
                width: 100%;
+          }
+     }
+
+     &__type {
+          position: absolute;
+          bottom: 0;
+          left: 20px;
+          background-color: $white;
+          border-radius: 10px 10px 0 0;
+          padding: 10px 25px 10px 50px;
+
+          img {
+               position: absolute;
+               left: 15px;
+               top: 10px;
+               height: 26px;
+               width: 26px;
+          }
+
+          span {
+               color: $red;
+               font-size: 16px;
           }
      }
 
@@ -211,4 +234,24 @@ h2.upcoming-events-header {
      color: $red;
      font-weight: 600;
      margin-bottom: 7px;
+}
+
+.single-events-type {
+     display: flex;
+     align-items: center;
+     position: relative;
+     align-items: center;
+     margin-bottom: 20px;
+
+     img {
+          height: 50px;
+          width: 50px;
+          margin-right: 10px;
+     }
+
+     span {
+          color: $red;
+          font-size: 18px;
+          font-weight: 600;
+     }
 }

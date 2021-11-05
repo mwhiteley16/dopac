@@ -12,13 +12,22 @@
 $start = get_post_meta( get_the_ID(), 'be_event_start', true );
 $end = get_post_meta( get_the_ID(), 'be_event_end', true );
 $allday = get_post_meta( get_the_ID() , 'be_event_allday', true );
+$wd_cpt_event_type = get_field( 'wd_cpt_event_type' );
 ?>
 
-<div class="event-item">
+<div class="event-item<?php if ( ! has_post_thumbnail() ) : ?> no-thumbnail<?php endif; ?>">
 
      <?php if ( has_post_thumbnail() ) : ?>
           <div class="event-item__thumbnail">
                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'dopac-thumbnail' ); ?></a>
+
+               <?php if ( ! empty( $wd_cpt_event_type ) ) : ?>
+                    <div class="event-item__type">
+                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/utility/sound.svg" alt="Sound Icon">
+                         <span><?php echo $wd_cpt_event_type; ?></span>
+                    </div>
+               <?php endif; ?>
+               
           </div>
      <?php endif; ?>
 
