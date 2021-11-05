@@ -1434,6 +1434,14 @@ ol.flickity-page-dots {
   html #wpadminbar {
     position: fixed; } }
 
+.page .entry-header:not(.entry-header--with-thumbnail) {
+  margin: 50px 0; }
+  .page .entry-header:not(.entry-header--with-thumbnail) h1.entry-title {
+    color: #002868; }
+
+.page.thin-layout .site-inner > .wrap {
+  max-width: 825px; }
+
 /* ----- Sidebars -------------------- */
 .content-sidebar .site-inner .wrap,
 .sidebar-content .site-inner .wrap {
@@ -2038,9 +2046,9 @@ input[type="number"],
 textarea,
 select {
   background: #fff;
-  border: 2px solid #b3b3b0;
+  border: 1px solid #b3b3b0;
   color: #4a4a4a;
-  padding: 15px;
+  padding: 12px;
   width: 100%;
   border-radius: 5px;
   line-height: 1.15; }
@@ -2076,23 +2084,23 @@ select {
 /* ----- Form Core Styles -------------------- */
 .gform_wrapper {
   width: 100%;
-  margin-bottom: 30px; }
+  margin-bottom: 25px; }
   .gform_wrapper fieldset {
     padding: 0;
     border: none; }
   .gform_wrapper .gfield_label {
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 5px;
     display: inline-block;
-    font-size: 16px; }
+    font-size: 18px; }
     .gform_wrapper .gfield_label .gfield_required {
       color: red;
       padding-left: 4px;
       font-weight: 400;
       font-style: italic;
-      font-size: calc(16px - 2px); }
+      font-size: calc(18px - 2px); }
   .gform_wrapper .gfield_description {
-    font-size: calc(16px - 2px);
+    font-size: calc(18px - 2px);
     margin-top: 3px; }
   .gform_wrapper .field_description_above .gfield_description {
     margin-top: 0;
@@ -2117,6 +2125,21 @@ select {
     visibility: hidden;
     position: absolute;
     left: -9999px; }
+  .gform_wrapper .gform_footer {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 40px; }
+    .gform_wrapper .gform_footer button {
+      border-color: #8c1a11;
+      background-color: #8c1a11;
+      width: 100%;
+      max-width: 175px;
+      text-transform: uppercase;
+      font-size: 16px; }
+      .gform_wrapper .gform_footer button:hover {
+        border-color: #5f120b;
+        background-color: #5f120b; }
 
 /* ----- Form Columns ------------------- */
 .gform_body .gform_fields {
@@ -2125,7 +2148,19 @@ select {
   flex-wrap: wrap; }
   .gform_body .gform_fields .gfield {
     width: 100%;
-    margin-bottom: 30px; }
+    margin-bottom: 25px; }
+    @media (min-width: 601px) {
+      .gform_body .gform_fields .gfield--width-half {
+        width: calc(50% - calc(25px / 2)); }
+      .gform_body .gform_fields .gfield--width-third {
+        width: calc(calc(100% / 3) - calc(calc(25px * 2) / 3)); }
+      .gform_body .gform_fields .gfield--width-quarter {
+        width: calc(25% - calc(calc(25px * 3) / 4)); } }
+  @media (min-width: 601px) and (max-width: 1000px) {
+    .gform_body .gform_fields .gfield--width-quarter {
+      width: calc(50% - calc(25px / 2)); } }
+    .gform_body .gform_fields .gfield.gfield_html {
+      margin-top: 40px; }
 
 /**
  * /assets/scss/partials/forms/forms-gravity-address.scss
@@ -2139,17 +2174,17 @@ select {
   flex-wrap: wrap;
   justify-content: space-between; }
   .ginput_container_address span {
-    margin-top: calc(30px / 2);
+    margin-top: calc(25px / 2);
     width: 100%; }
     .ginput_container_address span:first-child {
       margin-top: 0; }
     .ginput_container_address span.address_city, .ginput_container_address span.address_state, .ginput_container_address span.address_zip {
-      width: calc(calc(100% / 3) - calc(calc(30px * 2) / 3)); }
+      width: calc(calc(100% / 3) - calc(calc(25px * 2) / 3)); }
       @media (max-width: 600px) {
         .ginput_container_address span.address_city, .ginput_container_address span.address_state, .ginput_container_address span.address_zip {
           width: 100%; } }
     .ginput_container_address span label {
-      font-size: calc(16px - 2px);
+      font-size: calc(18px - 2px);
       margin-top: 3px; }
 
 /**
@@ -2181,7 +2216,7 @@ select {
     .ginput_container .gfield_radio .gchoice > input[type="radio"] + *::before {
       content: "";
       position: absolute;
-      top: 1px;
+      top: 5px;
       left: 0;
       width: 16px;
       height: 16px;
@@ -2195,7 +2230,7 @@ select {
       height: 8px;
       background-color: #fff;
       position: absolute;
-      top: 5px;
+      top: 9px;
       left: 4px;
       border-radius: 10px;
       opacity: 0; }
@@ -2219,7 +2254,7 @@ select {
     .ginput_container .gfield_radio .gchoice > input[type="checkbox"] + *::before {
       content: "";
       position: absolute;
-      top: 2px;
+      top: 5px;
       left: 0;
       width: 16px;
       height: 16px;
@@ -2234,7 +2269,7 @@ select {
       width: 10px;
       height: 10px;
       position: absolute;
-      top: 5px;
+      top: 8px;
       left: 3px;
       opacity: 0; }
     .ginput_container .gfield_checkbox .gchoice > input[type="checkbox"]:checked + *::before,
@@ -2244,6 +2279,14 @@ select {
     .ginput_container .gfield_checkbox .gchoice > input[type="checkbox"]:checked + *::after,
     .ginput_container .gfield_radio .gchoice > input[type="checkbox"]:checked + *::after {
       opacity: 1; }
+
+.inline .ginput_container .gfield_checkbox, .inline .ginput_container .gfield_radio {
+  display: flex;
+  align-items: center; }
+  .inline .ginput_container .gfield_checkbox .gchoice, .inline .ginput_container .gfield_radio .gchoice {
+    margin-right: 20px; }
+    .inline .ginput_container .gfield_checkbox .gchoice:last-child, .inline .ginput_container .gfield_radio .gchoice:last-child {
+      margin-right: 0; }
 
 .gf_list_2col .gfield_radio,
 .gf_list_2col .gfield_checkbox,
@@ -2274,7 +2317,7 @@ select {
   .four-column .gfield_checkbox .gchoice {
     width: 49%;
     padding: 0 10px 0 0;
-    margin: 10px 0 0 0; }
+    margin: 10px 0 0 0 !important; }
     .gf_list_2col .gfield_radio .gchoice:first-child,
     .gf_list_2col .gfield_checkbox .gchoice:first-child,
     .two-column .gfield_radio .gchoice:first-child,
@@ -2399,14 +2442,14 @@ select {
 .ginput_container_date input.datepicker {
   position: relative;
   background-image: url("../images/form-icons/calendar-alt-light.svg");
-  background-position: calc(100% - 15px) 50%;
+  background-position: calc(100% - 12px) 50%;
   background-repeat: no-repeat;
   background-size: 16px; }
 
 .gfield_date_wrap .ginput_complex {
   justify-content: flex-start; }
   .gfield_date_wrap .ginput_complex > div {
-    margin-right: 30px;
+    margin-right: 25px;
     width: 100%;
     max-width: 110px; }
     .gfield_date_wrap .ginput_complex > div:last-child {
@@ -3369,18 +3412,18 @@ select {
   justify-content: space-between; }
   .ginput_complex .name_first,
   .ginput_complex .name_last {
-    width: calc(50% - calc(30px / 2)); }
+    width: calc(50% - calc(25px / 2)); }
     @media (max-width: 600px) {
       .ginput_complex .name_first,
       .ginput_complex .name_last {
         width: 100%; } }
     .ginput_complex .name_first label,
     .ginput_complex .name_last label {
-      font-size: calc(16px - 2px);
+      font-size: calc(18px - 2px);
       margin-top: 3px; }
   @media (max-width: 600px) {
     .ginput_complex .name_last {
-      margin-top: calc(15px / 2); } }
+      margin-top: calc(12px / 2); } }
 /**
  * /assets/scss/partials/forms/forms-gravity-select.scss
  *
@@ -3401,7 +3444,7 @@ select {
   background-size: 16px;
   border-color: #b3b3b0;
   border-radius: 5px;
-  padding: 15px;
+  padding: 12px;
   max-width: 100%; }
 
 /**
@@ -3413,8 +3456,8 @@ select {
  */
 .gform_validation_errors {
   border: 2px solid red;
-  padding: 15px;
-  margin-bottom: 30px;
+  padding: 12px;
+  margin-bottom: 25px;
   border-radius: 5px;
   background-color: #fff9f9;
   text-align: center; }

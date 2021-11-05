@@ -64,17 +64,17 @@ $alignwide-width-thin: $alignwide-width + $base-content-width;
 
 
 // form variables
-$form-spacing: $base-margin;
+$form-spacing: 25px;
 $form-spacing-half: $form-spacing / 2;
-$form-padding: 15px;
-$form-border-width: 2px;
+$form-padding: 12px;
+$form-border-width: 1px;
 $form-border-color: $grey-medium;
 $form-border-color-focus: $primary-color;
 $form-text-color: $base-color;
 $form-required-color: red;
 $form-error: red;
 $form-border-radius: 5px;
-$form-font-size: 16px;
+$form-font-size: 18px;
 
 
 // column spacing

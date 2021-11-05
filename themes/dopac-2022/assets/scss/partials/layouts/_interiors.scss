@@ -40,6 +40,21 @@
      }
 }
 
+.page {
+
+     .entry-header:not(.entry-header--with-thumbnail) {
+          margin: 50px 0;
+
+          h1.entry-title {
+               color: $blue;
+          }
+     }
+
+     &.thin-layout .site-inner > .wrap {
+          max-width: $base-content-width;
+     }
+}
+
 /* ----- Sidebars -------------------- */
 .content-sidebar,
 .sidebar-content {

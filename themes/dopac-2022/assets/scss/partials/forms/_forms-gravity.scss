@@ -19,7 +19,7 @@
      }
 
      .gfield_label {
-          font-weight: 600;
+          font-weight: 400;
           margin-bottom: 5px;
           display: inline-block;
           font-size: $form-font-size;
@@ -68,6 +68,27 @@
           position: absolute;
           left: -9999px;
      }
+
+     .gform_footer {
+          display: block;
+          width: 100%;
+          text-align: center;
+          margin-top: 40px;
+
+          button {
+               border-color: $red;
+               background-color: $red;
+               width: 100%;
+               max-width: 175px;
+               text-transform: uppercase;
+               font-size: 16px;
+
+               &:hover {
+                    border-color: darken( $red, 10% );
+                    background-color: darken( $red, 10% );
+               }
+          }
+     }
 }
 
 /* ----- Form Columns ------------------- */
@@ -82,7 +103,7 @@
                width: 100%;
                margin-bottom: $form-spacing;
 
-               @include media( 'mobile+ ') {
+               @include media( 'mobile+') {
 
                     &--width-half {
                          width: calc(50% - calc(#{$form-spacing} / 2));
@@ -99,6 +120,10 @@
                               width: calc(50% - calc(#{$form-spacing} / 2));
                          }
                     }
+               }
+
+               &.gfield_html {
+                    margin-top: 40px;
                }
           }
      }

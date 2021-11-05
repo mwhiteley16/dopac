@@ -31,14 +31,12 @@ add_theme_support( 'genesis-accessibility',
 add_theme_support( 'genesis-structural-wraps',
      [
           'footer',
-          'footer-widgets',
           'header',
           'nav',
           'site-inner',
           'site-tagline'
      ]
 );
-add_theme_support( 'genesis-footer-widgets', 3 );
 
 
 /**
@@ -71,14 +69,13 @@ add_theme_support( 'genesis-menus',
 
 
 /**
-* Don't load default data into empty sidebar
+* Remove Sidebars
 */
-remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-add_action( 'genesis_sidebar',
-     function() {
-          dynamic_sidebar( 'sidebar' );
-     }
-);
+add_action( 'genesis_before_loop', 'wd_remove_sidebars' );
+function wd_remove_sidebars() {
+     remove_action( 'genesis_sidebar_alt', 'genesis_do_sidebar_alt' );
+     remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+}
 
 
 /**
