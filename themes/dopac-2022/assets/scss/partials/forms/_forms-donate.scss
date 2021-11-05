@@ -1,0 +1,122 @@
+/**
+ * /assets/scss/partials/forms/forms-donate.scss
+ *
+ * Let's define styles for the main donation form
+ *
+ *
+ */
+
+.gform_wrapper.donation-form_wrapper {
+     background-color: $white;
+     padding: 20px;
+
+     .gf_page_steps {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: $base-margin;
+
+          @include media( 'mobile' ) {
+               flex-direction: column;
+               align-items: flex-start;
+          }
+
+          .gf_step {
+               width: calc(calc(100% / 3) - 10px);
+               display: flex;
+               justify-content: center;
+               font-weight: 600;
+               border-bottom: 5px solid $base-color;
+               padding: 0 6px 6px;
+
+               &.gf_step_active {
+                    border-color: $red;
+                    color: $red;
+               }
+
+               .gf_step_number {
+
+                    &::after {
+                         content: ".";
+                         margin-right: 3px;
+                    }
+               }
+
+               @include media( 'mobile' ) {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    justify-content: flex-start;
+
+                    &:last-child {
+                         margin-bottom: 0;
+                    }
+               }
+          }
+     }
+
+     .gform_body {
+
+          .gform_fields {
+
+               .gfield {
+
+                    &.gfield_html {
+                         margin-top: 0;
+
+                         h2 {
+                              @include font-sizes( 30px, 30px, 24px );
+                              color: $blue;
+                              margin-bottom: 5px;
+                         }
+                    }
+
+                    &.gfield_total {
+                         display: flex;
+                         align-items: center;
+                         margin-bottom: 0;
+
+                         label {
+                              margin: 0;
+                              font-weight: 600;
+                         }
+
+                         input {
+                              border: none;
+                              margin-left: 10px;
+                              font-weight: 600;
+                              color: $red;
+                         }
+                    }
+               }
+          }
+     }
+
+     .gform_page_footer {
+          display: block;
+          width: 100%;
+          text-align: center;
+          margin-top: 20px;
+
+          input[type="button"],
+          button {
+               border-color: $red;
+               background-color: $red;
+               width: 100%;
+               max-width: 175px;
+               text-transform: uppercase;
+               font-size: 16px;
+               margin-bottom: 5px;
+
+               &.gform_previous_button {
+                    background-color: transparent;
+                    color: $red;
+               }
+
+               &:hover {
+                    border-color: darken( $red, 10% );
+                    background-color: darken( $red, 10% );
+                    color: $white;
+               }
+          }
+     }
+}
