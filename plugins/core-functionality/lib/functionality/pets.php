@@ -239,13 +239,37 @@ function ja_pet_listing_details() {
 
                          if ( !empty( $photo1 ) ) {
                               echo '<div class="pet-details-images">';
-                                   echo '<img src="' . $photo1 . '" class="primary-photo">';
-                                   if ( !empty( $photo2 ) ) {
-                                        echo '<img src="' . $photo2 . '">';
+
+                                   echo '<div class="pet-details-images-main">';
+                                        echo '<a href="#" data-featherlight="' . $photo1 . '">';
+                                             echo '<img src="' . $photo1 . '" class="primary-photo">';
+                                        echo '</a>';
+                                   echo '</div>';
+
+                                   if ( ! empty( $photo2 ) || ! empty( $photo3 ) ) {
+                                        echo '<div class="pet-details-images-bottom">';
+                                             if ( !empty( $photo1 ) ) {
+                                                  echo '<a href="#" data-featherlight="' . $photo1 . '">';
+                                                       echo '<img src="' . $photo1 . '">';
+                                                  echo '</a>';
+                                             }
+                                             if ( !empty( $photo2 ) ) {
+                                                  echo '<a href="#" data-featherlight="' . $photo2 . '">';
+                                                       echo '<img src="' . $photo2 . '">';
+                                                  echo '</a>';
+                                             }
+                                             if ( !empty( $photo3 ) ) {
+                                                  echo '<a href="#" data-featherlight="' . $photo3 . '">';
+                                                       echo '<img src="' . $photo3 . '">';
+                                                  echo '</a>';
+                                             }
+
+                                             echo '<span class="enlarge-text">Click to enlarge</span>';
+
+                                        echo '</div>';
                                    }
-                                   if ( !empty( $photo3 ) ) {
-                                        echo '<img src="' . $photo3 . '">';
-                                   }
+
+
                               echo '</div>';
                          }
 
@@ -400,6 +424,7 @@ function ja_pet_listing_details() {
 			$id           = esc_html( $results2['ID'] );
 			$name         = esc_html( $results2['AnimalName'] );
 			$breed        = esc_html( $results2['PrimaryBreed'] );
+               $species      = esc_html( $results2['Species'] );
 			$sex          = esc_html( $results2['Sex'] );
 			$age          = esc_html( $results2['Age'] );
 			$spayed       = esc_html( $results2['Altered'] );
@@ -414,113 +439,189 @@ function ja_pet_listing_details() {
 			$photo2       = esc_url( $results2['Photo2'] );
 			$photo3       = esc_url( $results2['Photo3'] );
 
-			echo '<div class="pet-details" style="padding-top:20px;">';
-				if ( !empty( $photo1 ) ) {
-					echo '<div class="pet-details-images">';
-						echo '<img src="' . $photo1 . '" class="primary-photo">';
-						if ( !empty( $photo2 ) ) {
-							echo '<img src="' . $photo2 . '">';
-						}
-						if ( !empty( $photo3 ) ) {
-							echo '<img src="' . $photo3 . '">';
-						}
-					echo '</div>';
-				}
-				echo '<div class="pet-details-meta">';
-					echo '<h2 class="name">' . $name . '</h2>';
-					echo '<table class="table table-bordered">';
-						echo '<tr>';
-							echo '<td>Animal ID</td>';
-							echo '<td>' . $id . '</td>';
-						echo '</tr>';
-						if ( !empty( $breed ) ) {
-							echo '<tr>';
-								echo '<td>Breed</td>';
-								echo '<td>' . $breed . '</td>';
-							echo '</tr>';
-						}
-						if ( !empty( $age ) ) {
-							if ( $age < 12 ) {
-								$age = $age . ' months old';
-							} else {
-								$year = floor($age/12);
-								$months = $age % 12;
-								$age = $year . ' years';
-								if ( 0 !== $months ) {
-									$age .= ' '  . $months . ' months';
-								}
-								$age .= ' old';
-							}
-							echo '<tr>';
-								echo '<td>Age</td>';
-								echo '<td>' . $age . '</td>';
-							echo '</tr>';
-						}
-						if ( !empty( $sex ) ) {
-							echo '<tr>';
-								echo '<td>Sex</td>';
-								echo '<td>' . $sex . '</td>';
-							echo '</tr>';
-						}
-						if ( !empty( $size ) ) {
-							echo '<tr>';
-								echo '<td>Size</td>';
-								echo '<td>';
-								if ( 'S' == $size) {
-								 	echo 'Small';
-								} elseif ( 'M' == $size ) {
-									echo 'Medium';
-								} elseif ( 'L' == $size ) {
-									echo 'Large';
-								} else {
-									echo $size;
-								}
-								echo  '</td>';
-							echo '</tr>';
-						}
-						if ( !empty( $color ) ) {
-							echo '<tr>';
-								echo '<td>Color</td>';
-								echo '<td>' . $color;
-								if ( !empty( $color2 ) ) {
-									echo ', ' . $color2;
-								}
-								echo '</td>';
-							echo '</tr>';
-						}
-						if ( !empty( $spayed ) ) {
-							echo '<tr>';
-								echo '<td>Spayed/Neutered</td>';
-								echo '<td>' . $spayed . '</td>';
-							echo '</tr>';
-						}
-						if ( !empty( $declawed ) ) {
-							echo '<tr>';
-								echo '<td>Declawed</td>';
-								echo '<td>' . $declawed . '</td>';
-							echo '</tr>';
-						}
-						if ( !empty( $housetrained ) ) {
-							echo '<tr>';
-								echo '<td>Housetrained</td>';
-								echo '<td>' . $housetrained . '</td>';
-							echo '</tr>';
-						}
-						if ( !empty( $intake_date ) ) {
-							$intake_date = strtotime( $intake_date );
-							echo '<tr>';
-								echo '<td>Intake Date</td>';
-								echo '<td>' . date( 'F j, Y', $intake_date ) . '</td>';
-							echo '</tr>';
-						}
-						if ( !empty( $price ) ) {
-							echo '<tr>';
-								echo '<td>Adoption Price</td>';
-								echo '<td>$' . $price . '</td>';
-							echo '</tr>';
-						}
-					echo '</table>';
-				echo '</div>';
+               $sponsor_link = '/donate/kennel-sponsorship/';
+               $adopt_link = $species == 'Cat' ? '/cat-adoption-survey/' : '/dog-adoption-survey/';
+               $more_animals = $species == 'Cat' ? '/get-involved/adopt-an-animal/cats/' : '/get-involved/adopt-an-animal/dogs/';
+               $more_animals_text = $species == 'Cat' ? 'Cats' : 'Dogs';
+
+               echo '<div class="pet-details">';
+
+                    echo '<div class="pet-details__left">';
+
+                         if ( !empty( $photo1 ) ) {
+                              echo '<div class="pet-details-images">';
+
+                                   echo '<div class="pet-details-images-main">';
+                                        echo '<a href="#" data-featherlight="' . $photo1 . '">';
+                                             echo '<img src="' . $photo1 . '" class="primary-photo">';
+                                        echo '</a>';
+                                   echo '</div>';
+
+                                   if ( ! empty( $photo2 ) || ! empty( $photo3 ) ) {
+                                        echo '<div class="pet-details-images-bottom">';
+                                             if ( !empty( $photo1 ) ) {
+                                                  echo '<a href="#" data-featherlight="' . $photo1 . '">';
+                                                       echo '<img src="' . $photo1 . '">';
+                                                  echo '</a>';
+                                             }
+                                             if ( !empty( $photo2 ) ) {
+                                                  echo '<a href="#" data-featherlight="' . $photo2 . '">';
+                                                       echo '<img src="' . $photo2 . '">';
+                                                  echo '</a>';
+                                             }
+                                             if ( !empty( $photo3 ) ) {
+                                                  echo '<a href="#" data-featherlight="' . $photo3 . '">';
+                                                       echo '<img src="' . $photo3 . '">';
+                                                  echo '</a>';
+                                             }
+
+                                             echo '<span class="enlarge-text">Click to enlarge</span>';
+
+                                        echo '</div>';
+                                   }
+
+
+                              echo '</div>';
+                         }
+
+                         echo '<div class="pet-details__content">';
+
+                              echo '<div class="pet-details__description">';
+                                   echo wpautop( $desc );
+                              echo '</div>';
+
+                              echo '<div class="wp-block-buttons">';
+
+                                   echo '<div class="wp-block-button has-small-font-size">';
+                                        echo '<a class="wp-block-button__link has-white-color has-red-background-color has-text-color has-background" href="' . $adopt_link . '">';
+                                             echo 'Adopt Me';
+                                        echo '</a>';
+                                   echo '</div>';
+
+                                   echo '<div class="wp-block-button has-small-font-size">';
+                                        echo '<a class="wp-block-button__link has-white-color has-blue-background-color has-text-color has-background" href="' . $sponsor_link . '">';
+                                             echo 'Sponsor Me';
+                                        echo '</a>';
+                                   echo '</div>';
+
+                                   echo '<div class="wp-block-button is-style-inverse has-small-font-size">';
+                                        echo '<a class="wp-block-button__link has-red-color has-red-background-color has-text-color has-background" href="' . $more_animals . '">';
+                                             echo 'See Other ' . $more_animals_text;
+                                        echo '</a>';
+                                   echo '</div>';
+
+                              echo '</div>';
+                         echo '</div>';
+
+                    echo '</div>';
+
+                    echo '<div class="pet-details__right">';
+
+                         echo '<h2 class="pet-details__name">' . $name . '</h2>';
+
+                         echo '<div class="pet-details-meta">';
+
+                              echo '<table class="table table-bordered">';
+                                   echo '<tr>';
+                                        echo '<td>Animal ID</td>';
+                                        echo '<td>' . $id . '</td>';
+                                   echo '</tr>';
+                                   if ( !empty( $breed ) ) {
+                                        echo '<tr>';
+                                             echo '<td>Breed</td>';
+                                             echo '<td>' . $breed;
+                                             if ( !empty( $breed2 ) ) {
+                                                  echo ', ' . $breed2;
+                                             }
+                                             echo '</td>';
+                                        echo '</tr>';
+                                   }
+                                   if ( !empty( $age ) ) {
+                                        if ( $age < 12 ) {
+                                             $age = $age . ' months old';
+                                        } else {
+                                             $year = floor($age/12);
+                                             $months = $age % 12;
+                                             $age = $year . ' years';
+                                             if ( 0 !== $months ) {
+                                                  $age .= ' '  . $months . ' months';
+                                             }
+                                             $age .= ' old';
+                                        }
+                                        echo '<tr>';
+                                             echo '<td>Age</td>';
+                                             echo '<td>' . $age . '</td>';
+                                        echo '</tr>';
+                                   }
+                                   if ( !empty( $sex ) ) {
+                                        echo '<tr>';
+                                             echo '<td>Sex</td>';
+                                             echo '<td>' . $sex . '</td>';
+                                        echo '</tr>';
+                                   }
+                                   if ( !empty( $size ) ) {
+                                        echo '<tr>';
+                                             echo '<td>Size</td>';
+                                             echo '<td>';
+                                             if ( 'S' == $size) {
+                                                  echo 'Small';
+                                             } elseif ( 'M' == $size ) {
+                                                  echo 'Medium';
+                                             } elseif ( 'L' == $size ) {
+                                                  echo 'Large';
+                                             } else {
+                                                  echo $size;
+                                             }
+                                             echo  '</td>';
+                                        echo '</tr>';
+                                   }
+                                   if ( !empty( $color ) ) {
+                                        echo '<tr>';
+                                             echo '<td>Color</td>';
+                                             echo '<td>' . $color;
+                                             if ( !empty( $color2 ) ) {
+                                                  echo ', ' . $color2;
+                                             }
+                                             echo '</td>';
+                                        echo '</tr>';
+                                   }
+                                   if ( !empty( $spayed ) ) {
+                                        echo '<tr>';
+                                             echo '<td>Spayed/Neutered</td>';
+                                             echo '<td>' . $spayed . '</td>';
+                                        echo '</tr>';
+                                   }
+                                   if ( !empty( $declawed ) ) {
+                                        echo '<tr>';
+                                             echo '<td>Declawed</td>';
+                                             echo '<td>' . $declawed . '</td>';
+                                        echo '</tr>';
+                                   }
+                                   if ( !empty( $housetrained ) ) {
+                                        echo '<tr>';
+                                             echo '<td>Housetrained</td>';
+                                             echo '<td>' . $housetrained . '</td>';
+                                        echo '</tr>';
+                                   }
+                                   if ( !empty( $intake_date ) ) {
+                                        $intake_date = strtotime( $intake_date );
+                                        echo '<tr>';
+                                             echo '<td>Intake Date</td>';
+                                             echo '<td>' . date( 'F j, Y', $intake_date ) . '</td>';
+                                        echo '</tr>';
+                                   }
+                                   if ( !empty( $price ) ) {
+                                        echo '<tr>';
+                                             echo '<td>Adoption Price</td>';
+                                             echo '<td>$' . $price . '</td>';
+                                        echo '</tr>';
+                                   }
+                              echo '</table>';
+
+                         echo '</div>';
+
+                    echo '</div>';
+
 			echo '</div>';
 		}
 	}
