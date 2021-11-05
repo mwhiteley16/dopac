@@ -171,6 +171,8 @@ function wd_custom_loop() {
 
                          if ( is_search() ) {
                               get_template_part( 'partials/search-loop-item' );
+                         } elseif( is_post_type_archive( 'events' ) ) {
+                              get_template_part( 'partials/event-item' );
                          } else {
                               get_template_part( 'partials/loop-item' );
                          }

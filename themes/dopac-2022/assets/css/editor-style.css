@@ -793,6 +793,9 @@ ol.flickity-page-dots {
     background-color: #000 !important;
     border: 2px solid #000; }
 
+.wp-block-buttons > .wp-block-button {
+  margin-bottom: 0; }
+
 .wp-block-buttons.is-variation-wide .wp-block-button__link {
   padding: 10px 30px; }
 

@@ -305,3 +305,28 @@ function wd_main_nav_search( $items, $args ) {
 
      return $items;
 }
+
+
+/**
+* Customize query args
+*/
+add_action( 'pre_get_posts', 'wd_customize_loops' );
+function wd_customize_loops( $query ) {
+
+     // offset posts on events page to account for featured event post
+	if( $query->is_main_query() && !is_admin() && is_post_type_archive( 'events' ) && ! get_query_var( 'paged' ) ) {
+          $meta_query = [
+			[
+                    'key'     => 'be_event_end',
+				'value'   => current_time( 'timestamp' ),
+				'compare' => '>'
+			]
+		];
+          $query->set( 'offset', 1 );
+          $query->set( 'orderby', 'meta_value_num' );
+          $query->set( 'order', 'ASC' );
+          $query->set( 'meta_key', 'be_event_start' );
+          $query->set( 'meta_query', $meta_query );
+          $query->set( 'posts_per_page', 99 ); // can't use -1 or offset won't work
+     }
+}

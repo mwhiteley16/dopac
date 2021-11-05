@@ -133,6 +133,10 @@
                     position: relative;
                     white-space: nowrap;
                     font-size: 16px;
+
+                    &:visited {
+                         color: $base-color;
+                    }
                }
 
                .menu-item:hover > a,
@@ -183,11 +187,6 @@
                a {
                     color: $white;
 
-                    &:hover,
-                    &:focus {
-                         color: #83c4f8;
-                    }
-
                     &:visited {
                          color: $white;
                     }
@@ -198,6 +197,11 @@
                          &:visited {
                               color: $blue;
                          }
+                    }
+
+                    &:hover,
+                    &:focus {
+                         color: #83c4f8;
                     }
                }
 

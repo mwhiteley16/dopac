@@ -1,0 +1,214 @@
+/**
+ * /assets/scss/partials/layouts/events.scss
+ *
+ * Let's define our event styles
+ *
+ * - Archive
+ * - Single
+ *
+ */
+
+/* ----- Archive -------------------- */
+.events-archive-header {
+     display: block;
+     width: 100%;
+     text-align: center;
+     margin: 50px 0;
+
+     @include media( 'mobile' ) {
+          margin: 30px 0;
+     }
+
+     h1 {
+          color: $blue;
+          margin: 0;
+     }
+}
+
+.event-header {
+     display: flex;
+     align-items: center;
+
+     .left {
+          width: 50%;
+     }
+
+     .right {
+          width: 50%;
+          padding: 75px;
+
+          h2, p {
+               margin-bottom: 15px;
+          }
+     }
+
+     &-button {
+          margin-top: 40px;
+     }
+
+     @include media( 'tablet' ) {
+          flex-wrap: wrap;
+
+          .left {
+               width: 100%;
+          }
+
+          .right {
+               width: 100%;
+               padding: 0;
+               margin-top: 40px;
+          }
+     }
+}
+
+h2.upcoming-events-header {
+     display: block;
+     width: 100%;
+     color: $blue;
+     text-align: center;
+     margin: 50px 0 30px;
+}
+
+.event-item {
+     background-color: $white;
+     border: 1px solid $grey-light;
+     position: relative;
+
+     &__thumbnail {
+          display: block;
+          width: 100%;
+
+          img {
+               display: block;
+               width: 100%;
+          }
+     }
+
+     &__content {
+          display: block;
+          width: 100%;
+          padding: 24px 24px 68px;
+     }
+
+     &__title {
+          display: block;
+          width: 100%;
+          font-weight: 600;
+     }
+
+     &__duration {
+          color: #9b9b9b;
+          display: block;
+          width: 100%;
+     }
+
+     &__excerpt {
+          display: block;
+          margin-top: 24px;
+     }
+
+     &__button {
+          position: absolute;
+          bottom: 24px;
+          right: 24px;
+     }
+}
+
+/* ----- Single -------------------- */
+.single-events {
+
+     .site-inner > .wrap {
+          max-width: $base-content-width;
+     }
+}
+
+.single-events-top {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     margin-bottom: 40px;
+}
+
+.single-events-title {
+     width: 50%;
+
+     h2 {
+          margin-bottom: 0;
+     }
+
+     @include media( 'tablet' ) {
+          width: 100%;
+          margin-bottom: 15px;
+     }
+}
+
+.single-events-datetime {
+     width: 50%;
+     display: flex;
+     justify-content: flex-end;
+
+     @include media( 'tablet' ) {
+          width: 100%;
+          justify-content: flex-start;
+     }
+
+     p {
+          margin: 0;
+          font-weight: 600;
+     }
+}
+
+.single-events-image {
+     display: block;
+     width: 100%;
+     border: 1px solid $grey-light;
+     padding: 15px;
+     margin-bottom: 15px;
+
+     img {
+          display: block;
+          width: 100%;
+     }
+
+     @include media( 'mobile' ) {
+          border: none;
+          padding: 0;
+     }
+}
+
+.social-sharing-wrap {
+     display: flex;
+     justify-content: flex-end;
+     flex-wrap: wrap;
+     margin-bottom: 40px;
+
+     .shared-counts-wrap {
+          margin: 0;
+          display: flex;
+          justify-content: flex-end;
+
+          &.style-icon {
+
+               .shared-counts-button {
+
+                    .shared-counts-icon {
+
+                         svg {
+                              fill: $red;
+                              width: 24px;
+                              height: 24px;
+                         }
+                    }
+               }
+          }
+     }
+}
+
+.social-sharing-text {
+     display: block;
+     width: 100%;
+     text-align: right;
+     color: $red;
+     font-weight: 600;
+     margin-bottom: 7px;
+}
