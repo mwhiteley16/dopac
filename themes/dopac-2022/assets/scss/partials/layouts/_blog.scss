@@ -39,6 +39,10 @@
                grid-template-columns: repeat( 2, 1fr );
           }
      }
+
+     .search & {
+          grid-template-columns: repeat( 1, 1fr );
+     }
 }
 
 .loop-item {

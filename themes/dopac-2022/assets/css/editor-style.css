@@ -352,6 +352,9 @@ input[type="search"] {
   @media (min-width: 769px) {
     .post-count-2 .loop-wrapper {
       grid-template-columns: repeat(2, 1fr); } }
+  .search .loop-wrapper {
+    grid-template-columns: repeat(1, 1fr); }
+
 .loop-item {
   background-color: #fff; }
   .loop-item__thumbnail {

@@ -8,11 +8,29 @@
 
 .search {
 
+     .site-inner {
+
+          > .wrap {
+               max-width: $base-content-width;
+          }
+
+          .content {
+               padding: 50px 0;
+          }
+     }
+
      .search-results-found {
           margin-bottom: 50px;
+          display: block;
+          width: 100%;
      }
 
      .search-loop-item {
-          margin-bottom: 50px;
+          margin-bottom: 30px;
+
+          a.readmore {
+               margin-top: 10px;
+               display: block;
+          }
      }
 }
