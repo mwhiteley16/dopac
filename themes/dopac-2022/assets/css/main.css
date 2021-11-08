@@ -758,6 +758,9 @@ input[type="search"] {
  *
  */
 /* ----- Archive -------------------- */
+.blog .content {
+  margin-bottom: 50px; }
+
 /* ----- Loop Item -------------------- */
 .loop-wrapper {
   display: grid;
@@ -802,6 +805,12 @@ input[type="search"] {
     margin-bottom: 0; }
 
 /* ----- Single -------------------- */
+.single .site-inner > .wrap {
+  max-width: 825px; }
+
+.single .site-inner .content {
+  padding: 50px 0; }
+
 /**
  * /assets/scss/partials/layouts/events.scss
  *

@@ -10,6 +10,12 @@
  */
 
 /* ----- Archive -------------------- */
+.blog {
+
+     .content {
+          margin-bottom: 50px;
+     }
+}
 
 /* ----- Loop Item -------------------- */
 .loop-wrapper {
@@ -81,3 +87,16 @@
 }
 
 /* ----- Single -------------------- */
+.single {
+
+     .site-inner {
+
+          > .wrap {
+               max-width: $base-content-width;
+          }
+
+          .content {
+               padding: 50px 0;
+          }
+     }
+}

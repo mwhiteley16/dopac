@@ -155,6 +155,8 @@
                 "1": "Contact",
                 "12": "Cookbook Purchase",
                 "14": "DOCPAC T-Shirt",
+                "16": "Dog Adoption Survey",
+                "17": "Donation - Full 2022",
                 "10": "Donation - Honorary Gift",
                 "6": "Donation - Kennel Sponsorship ",
                 "9": "Donation - Memorial Gift",
@@ -166,6 +168,7 @@
                 "5": "New Volunteer",
                 "3": "Special Request",
                 "2": "Success Story",
+                "18": "Volunteer - Full 2022",
                 "4": "Volunteer Sign Up"
             },
             "default_value": false,
@@ -266,6 +269,65 @@
                     "placeholder": ""
                 }
             ]
+        },
+        {
+            "key": "field_6189552b0e805",
+            "label": "News",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6189553c0e806",
+            "label": "News Archive Header",
+            "name": "wd_options_news_archive_header",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_618955480e807",
+            "label": "News Archive Hero Image",
+            "name": "wd_options_news_archive_hero_image",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -285,5 +347,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1636045802
+    "modified": 1636390259
 }
