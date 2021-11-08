@@ -1781,15 +1781,90 @@ hr.wp-block-separator {
 .slideshow-block {
   position: relative; }
   .slideshow-block__slides {
-    width: 100%; }
+    width: 100%;
+    height: 660px; }
+    .slideshow-block__slides .flickity-viewport {
+      height: 100% !important; }
+    @media (max-width: 768px) {
+      .slideshow-block__slides {
+        height: 560px; } }
+    @media (max-width: 600px) {
+      .slideshow-block__slides {
+        height: 460px; } }
   .slideshow-block__slide {
     width: 100%;
-    display: block; }
-    .slideshow-block__slide.is-selected {
-      padding: 0; }
-    .slideshow-block__slide img {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 50px 30px; }
+    .slideshow-block__slide.content-top {
+      align-items: flex-start; }
+    .slideshow-block__slide.content-bottom {
+      align-items: flex-end; }
+    .slideshow-block__slide.yes-overlay::before {
+      content: "";
+      background: black;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; }
+      @media (max-width: 768px) {
+        .slideshow-block__slide.yes-overlay::before {
+          background: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%); } }
+  .slideshow-block__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .slideshow-block__image img {
       display: block;
-      width: 100%; }
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      -o-object-position: right center;
+         object-position: right center; }
+  .slideshow-block__content {
+    position: relative;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    z-index: 2; }
+    .slideshow-block__content-inner {
+      max-width: 450px; }
+    .slideshow-block__content h2 {
+      font-size: 60px; }
+      @media (max-width: 768px) {
+        .slideshow-block__content h2 {
+          font-size: 50px; } }
+      @media (max-width: 600px) {
+        .slideshow-block__content h2 {
+          font-size: 40px; } }
+    .slideshow-block__content h3 {
+      font-size: 40px; }
+      @media (max-width: 768px) {
+        .slideshow-block__content h3 {
+          font-size: 40px; } }
+      @media (max-width: 600px) {
+        .slideshow-block__content h3 {
+          font-size: 30px; } }
+    .slideshow-block__content h4 {
+      font-size: 30px; }
+      @media (max-width: 768px) {
+        .slideshow-block__content h4 {
+          font-size: 30px; } }
+      @media (max-width: 600px) {
+        .slideshow-block__content h4 {
+          font-size: 24px; } }
+  .slideshow-block__primary-header, .slideshow-block__secondary-header {
+    color: #fff;
+    margin-bottom: 20px; }
+  .slideshow-block__button .wp-block-button__link {
+    font-size: 16px !important; }
   .slideshow-block .flickity-prev-next-button[disabled] {
     cursor: not-allowed;
     opacity: 0.5; }

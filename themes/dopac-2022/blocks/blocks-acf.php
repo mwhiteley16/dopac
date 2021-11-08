@@ -355,7 +355,7 @@ function wd_acf_blocks() {
                     'supports' => [
                          'align'           => [ 'wide', 'full' ],
                          'anchor'          => false,
-                         'customClassName' => true,
+                         'customClassName' => true
                     ]
                ]
           );
