@@ -84,10 +84,10 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5f7c5e43add25",
-                    "label": "Team Member Email",
-                    "name": "wd_team_email",
-                    "type": "email",
+                    "key": "field_6189391fc57ff",
+                    "label": "Team Member Link",
+                    "name": "team_member_link",
+                    "type": "link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -96,10 +96,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
+                    "return_format": "array"
                 },
                 {
                     "key": "field_5f7c5e53add26",
@@ -108,7 +105,15 @@
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5f7c5e0dadd22",
+                                "operator": "==",
+                                "value": "no-show"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -196,5 +201,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1621011388
+    "modified": 1636383090
 }

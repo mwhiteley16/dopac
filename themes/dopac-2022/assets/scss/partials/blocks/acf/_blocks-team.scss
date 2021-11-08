@@ -10,44 +10,30 @@
      position: relative;
 
      &__interior {
-          display: flex;
+          display: grid;
           flex-wrap: wrap;
-     }
+          column-gap: 60px;
+          row-gap: 60px;
+          grid-template-columns: repeat( 3, 1fr );
+          width: 100%;
 
-     &__item {
-          width: calc(calc(100% / 3) - 40px);
-          margin: 0 60px 0 0;
-
-          @include media( 'medium+' ) {
-               &:nth-child(3n) {
-                    margin-right: 0;
-               }
-
-               &:nth-child(n+4) {
-                    margin-top: 60px;
-               }
-          }
-
-          @include media( 'medium' ) {
-               width: calc(50% - 30px);
-
-               &:nth-child(2n) {
-                    margin-right: 0;
-               }
-
-               &:nth-child(n+3) {
-                    margin-top: 60px;
-               }
+          @include media( 'tablet' ) {
+               grid-template-columns: repeat( 2, 1fr );
           }
 
           @include media( 'mobile' ) {
-               width: 100%;
-               margin: 40px 0 0 0;
+               grid-template-columns: 1fr;
+          }
 
-               &:first-child {
-                    margin-top: 0;
+          @include media( 'tablet+' ) {
+               .post-count-2 & {
+                    grid-template-columns: repeat( 2, 1fr );
                }
           }
+     }
+
+     &__item {
+
      }
 
      &__headshot {
@@ -57,25 +43,36 @@
 
           img {
                display: block;
-               width: 100%;
+               width: auto;
           }
      }
 
      &__name {
           display: block;
           width: 100%;
-          margin: 20px 0 0;
+          margin: 20px 0 5px;
+          font-weight: 600;
+          text-align: center;
      }
 
      &__position {
           display: block;
           width: 100%;
+          text-align: center;
+          font-size: 16px;
+          line-height: 20px;
      }
 
-     &__email {
+     &__link {
           display: block;
           width: 100%;
-          margin-top: 10px;
+          margin-top: 15px;
+          text-align: center;
+
+          a {
+               font-size: 16px;
+               color: $red;
+          }
      }
 
      &__social {
