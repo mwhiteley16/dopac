@@ -1,6 +1,6 @@
 {
     "key": "group_541ca7b4dd4fe",
-    "title": "Pet Guide Tips",
+    "title": "Block - Pet Guide Tips \/ Resources",
     "fields": [
         {
             "key": "field_541ca7bf370e4",
@@ -67,9 +67,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "block",
                 "operator": "==",
-                "value": "45"
+                "value": "acf\/acf-resources"
             }
         ]
     ],
@@ -81,5 +81,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1636043928
+    "modified": 1636389404
 }

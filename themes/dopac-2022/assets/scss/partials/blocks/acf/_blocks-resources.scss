@@ -1,0 +1,82 @@
+/**
+ * /assets/scss/partials/blocks/acf/blocks-faq.scss
+ *
+ * Let's define our faq block styles
+ *
+ *
+ */
+
+.resources-block {
+
+     &__toggle {
+          width: 100%;
+          margin-top: 24px;
+          position: relative;
+
+          @include media( 'mobile' ) {
+               padding: 15px;
+          }
+
+          &:first-child {
+               margin-top: 0;
+          }
+
+          &-question {
+               font-size: 20px;
+               line-height: 24px;
+               font-weight: 600;
+               transition: all 0.2s ease-in-out;
+               cursor: pointer;
+               border: none;
+               background-color: transparent;
+               text-align: left;
+               color: $red;
+               padding: 0;
+
+               &:focus {
+                    outline: none;
+                    outline-offset: 0;
+               }
+
+               &:hover {
+                    color: $red;
+                    text-decoration: underline;
+               }
+          }
+
+          &-answer {
+               display: none;
+               margin-top: 16px;
+               border-left: 3px solid $red;
+               padding-left: 16px;
+
+               p {
+                    margin-bottom: 16px;
+
+                    &:last-child {
+                         margin-bottom: 0;
+                    }
+
+                    a {
+                         color: $red;
+                    }
+               }
+
+               &[aria-hidden=true],
+               &[data-hidden=true] {
+                    display: none;
+               }
+          }
+
+          &.active {
+               background-color: $white;
+
+               .faq-block__toggle {
+
+                    &-question {
+                         color: $primary-color;
+                    }
+               }
+          }
+     }
+}

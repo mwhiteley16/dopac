@@ -301,6 +301,38 @@ function wd_acf_blocks() {
 
           acf_register_block_type(
                [
+                    'name'			=> 'acf-resources',
+                    'title'			=> __( 'Resources Block', WD_CHILD_THEME_NAME ),
+                    'description'		=> __( 'A block to recent posts.', WD_CHILD_THEME_NAME ),
+                    'category'		=> 'wd-blocks',
+                    'render_template'   => 'blocks/acf-blocks/templates/block-acf-resources.php',
+                    'mode'              => 'preview',
+                    'icon'              => $block_icon,
+                    'enqueue_assets'    => function() {
+                           wp_enqueue_script(
+                                'acf-resources-block',
+                                get_stylesheet_directory_uri() . '/blocks/acf-blocks/js/block-resources.js',
+                                [ 'jquery' ],
+                                '',
+                                true
+                           );
+                    },
+                    'keywords' => [
+                         'resources',
+                         'wd',
+                         'acf',
+                         WD_CHILD_THEME_SLUG
+                    ],
+                    'post_type' => [
+                         'post',
+                         'page'
+                    ],
+
+               ]
+          );
+
+          acf_register_block_type(
+               [
                     'name'			=> 'acf-separator',
                     'title'			=> __( 'Separator Block', WD_CHILD_THEME_NAME ),
                     'description'		=> __( 'A block to replace the standard block editor separator block.', WD_CHILD_THEME_NAME ),

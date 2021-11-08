@@ -4970,6 +4970,57 @@ hr.wp-block-separator {
     justify-content: flex-end; }
 
 /**
+ * /assets/scss/partials/blocks/acf/blocks-faq.scss
+ *
+ * Let's define our faq block styles
+ *
+ *
+ */
+.resources-block__toggle {
+  width: 100%;
+  margin-top: 24px;
+  position: relative; }
+  @media (max-width: 600px) {
+    .resources-block__toggle {
+      padding: 15px; } }
+  .resources-block__toggle:first-child {
+    margin-top: 0; }
+  .resources-block__toggle-question {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    color: #8c1a11;
+    padding: 0; }
+    .resources-block__toggle-question:focus {
+      outline: none;
+      outline-offset: 0; }
+    .resources-block__toggle-question:hover {
+      color: #8c1a11;
+      text-decoration: underline; }
+  .resources-block__toggle-answer {
+    display: none;
+    margin-top: 16px;
+    border-left: 3px solid #8c1a11;
+    padding-left: 16px; }
+    .resources-block__toggle-answer p {
+      margin-bottom: 16px; }
+      .resources-block__toggle-answer p:last-child {
+        margin-bottom: 0; }
+      .resources-block__toggle-answer p a {
+        color: #8c1a11; }
+    .resources-block__toggle-answer[aria-hidden=true], .resources-block__toggle-answer[data-hidden=true] {
+      display: none; }
+  .resources-block__toggle.active {
+    background-color: #fff; }
+    .resources-block__toggle.active .faq-block__toggle-question {
+      color: #002868; }
+
+/**
  * /assets/scss/partials/blocks/acf/blocks-separator.scss
  *
  * Let's define our separator block styles
