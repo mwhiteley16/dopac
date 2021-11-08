@@ -11,5 +11,5 @@ This theme uses SASS for all CSS output and CodeKit to compile. For access to th
 
 ## Theme Changelog
 
-Version 1.0 - DATE
+Version 1.0 - 11/8/2021
  - Initial Commit

@@ -260,34 +260,10 @@ add_filter( 'admin_body_class', 'wd_editor_layout_class' );
 
 
 /**
-* Disable self pingbacks
-*/
-function wd_disable_self_pingbacks( &$links ) {
-
-     foreach ( $links as $l => $link ) {
-          if ( 0 === strpos( $link, get_option( 'home' ) ) ) {
-               unset($links[$l]);
-          }
-     }
-}
-// add_action( 'pre_ping', 'wd_disable_self_pingbacks' );
-
-
-/**
-* Remove unused admin menu items
-*
-* @link https://whiteleydesigns.com/editing-wordpress-admin-menus/
-*/
-function wd_admin_menu_cleanup() {
-     remove_menu_page( 'edit-comments.php' );
-}
-// add_action( 'admin_menu', 'wd_admin_menu_cleanup' );
-
-
-/**
 * Add custom image sizes
 */
 add_image_size( 'dopac-thumbnail', 600, 350, true );
+
 
 /**
 * Add search to primary nav menu
