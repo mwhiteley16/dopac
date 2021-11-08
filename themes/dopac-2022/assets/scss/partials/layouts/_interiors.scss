@@ -53,6 +53,10 @@
      &.thin-layout .site-inner > .wrap {
           max-width: $base-content-width;
      }
+
+     &.medium-layout .site-inner > .wrap {
+          max-width: 968px;
+     }
 }
 
 /* ----- Sidebars -------------------- */

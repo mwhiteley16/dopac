@@ -99,6 +99,10 @@ wp.domReady( () => {
                {
                     name: 'large-header',
                     label: 'Large Header',
+               },
+               {
+                    name: 'regular-font-weight',
+                    label: 'Regular Font Weight',
                }
           ]
      );

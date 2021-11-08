@@ -51,6 +51,10 @@ h6 {
      &.is-style-large-header {
           @include font-sizes( 50px, 40px, 30px );
      }
+
+     &.is-style-regular-font-weight {
+          font-weight: 400;
+     }
 }
 
 h1 {

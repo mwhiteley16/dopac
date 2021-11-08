@@ -35,6 +35,10 @@
           .wp-block-group__inner-container {
                max-width: $base-width;
                margin: 0 auto;
+
+               .medium-layout & {
+                    max-width: 968px;
+               }
           }
      }
 

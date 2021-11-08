@@ -84,11 +84,15 @@ function wd_remove_sidebars() {
 genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
-genesis_register_layout(
-     'thin-layout',
+genesis_register_layout( 'thin-layout',
           [
                'label' => __( 'Thin Layout', WD_CHILD_THEME_SLUG )
-          ]
+          ],
+);
+genesis_register_layout( 'medium-layout',
+          [
+               'label' => __( 'Medium Layout', WD_CHILD_THEME_SLUG )
+          ],
 );
 
 
