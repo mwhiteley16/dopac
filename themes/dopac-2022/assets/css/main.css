@@ -3504,69 +3504,105 @@ select {
  *
  *
  */
-.gform_wrapper.donation-form_wrapper {
+.gform_wrapper.donation-form_wrapper,
+.gform_wrapper.volunteer-form_wrapper {
   background-color: #fff;
   padding: 20px; }
-  .gform_wrapper.donation-form_wrapper .gf_page_steps {
+  .gform_wrapper.donation-form_wrapper .gf_page_steps,
+  .gform_wrapper.volunteer-form_wrapper .gf_page_steps {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 30px; }
     @media (max-width: 600px) {
-      .gform_wrapper.donation-form_wrapper .gf_page_steps {
+      .gform_wrapper.donation-form_wrapper .gf_page_steps,
+      .gform_wrapper.volunteer-form_wrapper .gf_page_steps {
         flex-direction: column;
         align-items: flex-start; } }
-    .gform_wrapper.donation-form_wrapper .gf_page_steps .gf_step {
+    .gform_wrapper.donation-form_wrapper .gf_page_steps .gf_step,
+    .gform_wrapper.volunteer-form_wrapper .gf_page_steps .gf_step {
       width: calc(calc(100% / 3) - 10px);
       display: flex;
       justify-content: center;
       font-weight: 600;
       border-bottom: 5px solid #4a4a4a;
       padding: 0 6px 6px; }
-      .gform_wrapper.donation-form_wrapper .gf_page_steps .gf_step.gf_step_active {
+      .gform_wrapper.donation-form_wrapper .gf_page_steps .gf_step.gf_step_active,
+      .gform_wrapper.volunteer-form_wrapper .gf_page_steps .gf_step.gf_step_active {
         border-color: #8c1a11;
         color: #8c1a11; }
-      .gform_wrapper.donation-form_wrapper .gf_page_steps .gf_step .gf_step_number::after {
+      .gform_wrapper.donation-form_wrapper .gf_page_steps .gf_step .gf_step_number::after,
+      .gform_wrapper.volunteer-form_wrapper .gf_page_steps .gf_step .gf_step_number::after {
         content: ".";
         margin-right: 3px; }
       @media (max-width: 600px) {
-        .gform_wrapper.donation-form_wrapper .gf_page_steps .gf_step {
+        .gform_wrapper.donation-form_wrapper .gf_page_steps .gf_step,
+        .gform_wrapper.volunteer-form_wrapper .gf_page_steps .gf_step {
           width: 100%;
           margin-bottom: 10px;
           justify-content: flex-start; }
-          .gform_wrapper.donation-form_wrapper .gf_page_steps .gf_step:last-child {
+          .gform_wrapper.donation-form_wrapper .gf_page_steps .gf_step:last-child,
+          .gform_wrapper.volunteer-form_wrapper .gf_page_steps .gf_step:last-child {
             margin-bottom: 0; } }
-  .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_html {
+  .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_html,
+  .gform_wrapper.volunteer-form_wrapper .gform_body .gform_fields .gfield.gfield_html {
     margin-top: 0; }
-    .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_html h2 {
+    .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_html h2,
+    .gform_wrapper.volunteer-form_wrapper .gform_body .gform_fields .gfield.gfield_html h2 {
       font-size: 30px;
       color: #002868;
       margin-bottom: 5px; }
       @media (max-width: 768px) {
-        .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_html h2 {
+        .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_html h2,
+        .gform_wrapper.volunteer-form_wrapper .gform_body .gform_fields .gfield.gfield_html h2 {
           font-size: 30px; } }
       @media (max-width: 600px) {
-        .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_html h2 {
+        .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_html h2,
+        .gform_wrapper.volunteer-form_wrapper .gform_body .gform_fields .gfield.gfield_html h2 {
           font-size: 24px; } }
-  .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_total {
+  .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gsection,
+  .gform_wrapper.volunteer-form_wrapper .gform_body .gform_fields .gfield.gsection {
+    margin-top: 30px; }
+    .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gsection h3,
+    .gform_wrapper.volunteer-form_wrapper .gform_body .gform_fields .gfield.gsection h3 {
+      font-size: 20px;
+      margin-bottom: 5px; }
+      @media (max-width: 768px) {
+        .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gsection h3,
+        .gform_wrapper.volunteer-form_wrapper .gform_body .gform_fields .gfield.gsection h3 {
+          font-size: 18px; } }
+      @media (max-width: 600px) {
+        .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gsection h3,
+        .gform_wrapper.volunteer-form_wrapper .gform_body .gform_fields .gfield.gsection h3 {
+          font-size: 18px; } }
+    .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gsection .gsection_description,
+    .gform_wrapper.volunteer-form_wrapper .gform_body .gform_fields .gfield.gsection .gsection_description {
+      font-size: 16px; }
+  .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_total,
+  .gform_wrapper.volunteer-form_wrapper .gform_body .gform_fields .gfield.gfield_total {
     display: flex;
     align-items: center;
     margin-bottom: 0; }
-    .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_total label {
+    .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_total label,
+    .gform_wrapper.volunteer-form_wrapper .gform_body .gform_fields .gfield.gfield_total label {
       margin: 0;
       font-weight: 600; }
-    .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_total input {
+    .gform_wrapper.donation-form_wrapper .gform_body .gform_fields .gfield.gfield_total input,
+    .gform_wrapper.volunteer-form_wrapper .gform_body .gform_fields .gfield.gfield_total input {
       border: none;
       margin-left: 10px;
       font-weight: 600;
       color: #8c1a11; }
-  .gform_wrapper.donation-form_wrapper .gform_page_footer {
+  .gform_wrapper.donation-form_wrapper .gform_page_footer,
+  .gform_wrapper.volunteer-form_wrapper .gform_page_footer {
     display: block;
     width: 100%;
     text-align: center;
     margin-top: 20px; }
     .gform_wrapper.donation-form_wrapper .gform_page_footer input[type="button"],
-    .gform_wrapper.donation-form_wrapper .gform_page_footer button {
+    .gform_wrapper.donation-form_wrapper .gform_page_footer button,
+    .gform_wrapper.volunteer-form_wrapper .gform_page_footer input[type="button"],
+    .gform_wrapper.volunteer-form_wrapper .gform_page_footer button {
       border-color: #8c1a11;
       background-color: #8c1a11;
       width: 100%;
@@ -3575,11 +3611,15 @@ select {
       font-size: 16px;
       margin-bottom: 5px; }
       .gform_wrapper.donation-form_wrapper .gform_page_footer input[type="button"].gform_previous_button,
-      .gform_wrapper.donation-form_wrapper .gform_page_footer button.gform_previous_button {
+      .gform_wrapper.donation-form_wrapper .gform_page_footer button.gform_previous_button,
+      .gform_wrapper.volunteer-form_wrapper .gform_page_footer input[type="button"].gform_previous_button,
+      .gform_wrapper.volunteer-form_wrapper .gform_page_footer button.gform_previous_button {
         background-color: transparent;
         color: #8c1a11; }
       .gform_wrapper.donation-form_wrapper .gform_page_footer input[type="button"]:hover,
-      .gform_wrapper.donation-form_wrapper .gform_page_footer button:hover {
+      .gform_wrapper.donation-form_wrapper .gform_page_footer button:hover,
+      .gform_wrapper.volunteer-form_wrapper .gform_page_footer input[type="button"]:hover,
+      .gform_wrapper.volunteer-form_wrapper .gform_page_footer button:hover {
         border-color: #5f120b;
         background-color: #5f120b;
         color: #fff; }
